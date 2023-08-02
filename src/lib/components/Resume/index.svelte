@@ -4,7 +4,6 @@
 	import Typography from '../Typography/Typography.svelte';
 	import Header from './Header.svelte';
 	import Sidebar from './Sidebar.svelte';
-	import { educations } from './educations';
 	import { experiences } from './experiences';
 </script>
 
@@ -26,9 +25,7 @@
 					<Typography variant="h2">Experience</Typography>
 					<ExperienceList items={experiences} />
 				</section>
-				<aside>
-					<Sidebar />
-				</aside>
+				<Sidebar />
 			</main>
 		</div>
 	</article>
@@ -74,10 +71,22 @@
 		}
 	}
 
-	aside {
-		width: 240px;
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
+	@media print {
+		.container {
+			background-color: white;
+		}
+		.wrapper {
+			border: none;
+		}
+		.header-top {
+			display: none;
+		}
+		article {
+			padding: 0;
+			max-width: 100%;
+		}
+		main {
+			flex-direction: column;
+		}
 	}
 </style>

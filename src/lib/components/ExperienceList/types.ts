@@ -4,4 +4,5 @@ export type Item = {
 	subtitle: string;
 	timestamp: string;
 	text: string[];
+	tags: string[];
 };

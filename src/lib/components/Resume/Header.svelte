@@ -75,4 +75,14 @@
 		height: 250px;
 		border-radius: 50%;
 	}
+
+	@media print {
+		header {
+			padding: 2.5rem;
+		}
+		img {
+			width: 150px;
+			height: 150px;
+		}
+	}
 </style>
