@@ -1,0 +1,45 @@
+@use './breakpoints' as bps;
+
+// Small devices
+@mixin sm {
+	@media (min-width: #{bps.$screen-sm-min}) {
+		@content;
+	}
+}
+
+// Medium devices
+@mixin md {
+	@media (min-width: #{bps.$screen-md-min}) {
+		@content;
+	}
+}
+
+// Large devices
+@mixin lg {
+	@media (min-width: #{bps.$screen-lg-min}) {
+		@content;
+	}
+}
+
+// Extra large devices
+@mixin xl {
+	@media (min-width: #{bps.$screen-xl-min}) {
+		@content;
+	}
+}
+
+// Custom devices
+@mixin rwd($screen) {
+	@media (min-width: ($screen+'px')) {
+		@content;
+	}
+}
+
+@mixin linear-gradient-silver {
+	background-image: linear-gradient(240deg, #cecece, #acacac);
+}
+
+@mixin linear-gradient-black {
+	// background-image: linear-gradient(140deg, black, #212121);
+	background-image: linear-gradient(140deg, #020202, #303030);
+}

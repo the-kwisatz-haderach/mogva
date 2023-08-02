@@ -1,0 +1,20 @@
+export const skills: string[] = [
+	'CSS',
+	'JavaScript',
+	'React',
+	'React Hooks',
+	'Scrum',
+	'TypeScript',
+	'Docker',
+	'NextJS',
+	'Node.js',
+	'AWS S3',
+	'Golang',
+	'MongoDB',
+	'PostgreSQL',
+	'SCSS/SASS',
+	'Svelte.js',
+	'Terraform',
+	'Google cloud',
+	'Express.js'
+];

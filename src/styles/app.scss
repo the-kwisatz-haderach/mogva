@@ -1,0 +1,55 @@
+@use './mixins' as m;
+
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Nova+Mono&display=swap');
+@import './variables';
+
+* {
+	box-sizing: border-box;
+	font-family: var(--font-primary), Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	line-height: 1.4;
+}
+h1,
+h2 {
+	margin-bottom: 1.6rem;
+}
+
+h3 {
+	font-weight: 500;
+}
+
+p,
+button,
+li {
+	line-height: 1.4;
+	margin: 0;
+}
+
+a {
+	color: var(--color-text-contrast);
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	&:not(:last-child) {
+		margin-bottom: 8px;
+	}
+}
