@@ -31,7 +31,6 @@
 <style lang="scss">
 	.flex {
 		display: flex;
-		align-items: center;
 		gap: 1rem;
 		margin-bottom: 6px;
 	}

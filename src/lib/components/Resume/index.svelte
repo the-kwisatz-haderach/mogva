@@ -22,16 +22,10 @@
 		<div class="wrapper">
 			<Header />
 			<main>
-				<div>
-					<section>
-						<Typography variant="h2">Education</Typography>
-						<ExperienceList items={educations} />
-					</section>
-					<section>
-						<Typography variant="h2">Experience</Typography>
-						<ExperienceList items={experiences} />
-					</section>
-				</div>
+				<section>
+					<Typography variant="h2">Experience</Typography>
+					<ExperienceList items={experiences} />
+				</section>
 				<aside>
 					<Sidebar />
 				</aside>
@@ -43,10 +37,6 @@
 <style lang="scss">
 	.container {
 		background-color: rgba(0, 0, 0, 0.98);
-	}
-
-	section:not(:last-child) {
-		margin-bottom: 1.5rem;
 	}
 
 	article {
@@ -79,7 +69,7 @@
 		padding: 3rem 2.5rem;
 		display: flex;
 		gap: 2.5rem;
-		& > div:first-child {
+		& > section:first-child {
 			flex: 1;
 		}
 	}

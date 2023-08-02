@@ -2,7 +2,34 @@ import qlikLogo from '$lib/assets/images/qlik_logo.png';
 import ikeaLogo from '$lib/assets/images/ikea_logo.png';
 import heliospectraLogo from '$lib/assets/images/heliospectra_logo.webp';
 import systeconLogo from '$lib/assets/images/systecon_logo.png';
+import saltLogo from '$lib/assets/images/salt_logo.png';
 import type { Item } from '../ExperienceList/types';
+
+// skills: [
+// 	'Circle CI',
+// 	'Codeclimate',
+// 	'Cypress',
+// 	'Docker',
+// 	'Docker Compose',
+// 	'Figma',
+// 	'Golang',
+// 	'Grafana',
+// 	'Helm',
+// 	'JavaScript',
+// 	'LaunchDarkly',
+// 	'Mirage JS',
+// 	'MongoDB',
+// 	'Node.js',
+// 	'Okta',
+// 	'Open API',
+// 	'Postman',
+// 	'React',
+// 	'React Query',
+// 	'Splunk',
+// 	'Testing',
+// 	'Testing Library',
+// 	'TypeScript'
+// ]
 
 export const experiences: Item[] = [
 	{
@@ -25,31 +52,6 @@ export const experiences: Item[] = [
 			'Although focus has been on building, testing, documenting and maintaining the frontend application, other tasks include creating new workflows in CircleCI, creating an e2e test structure with Cypress and docker-compose, as well enabling the generation of Typescript models and api clients based on Open API specifications from different repositories.',
 			'During the last 6 months of the assignment I switched to work on the backend side, consisting of multiple microservices written in Go. Work consisted of developing features in support of a new 3rd party system integration, maintaining existing services, improving infrastructure and testing.'
 		]
-		// skills: [
-		// 	'Circle CI',
-		// 	'Codeclimate',
-		// 	'Cypress',
-		// 	'Docker',
-		// 	'Docker Compose',
-		// 	'Figma',
-		// 	'Golang',
-		// 	'Grafana',
-		// 	'Helm',
-		// 	'JavaScript',
-		// 	'LaunchDarkly',
-		// 	'Mirage JS',
-		// 	'MongoDB',
-		// 	'Node.js',
-		// 	'Okta',
-		// 	'Open API',
-		// 	'Postman',
-		// 	'React',
-		// 	'React Query',
-		// 	'Splunk',
-		// 	'Testing',
-		// 	'Testing Library',
-		// 	'TypeScript'
-		// ]
 	},
 	{
 		title: 'Frontend Developer',
@@ -70,6 +72,16 @@ export const experiences: Item[] = [
 			'During my tenure I worked with front-end development in two projects, both being React applications where users create, edit and analyze hierarchical data. Apart from React, the tech stack included Typescript, Node.js and Electron.',
 			'Early on, I pushed for and drove a change to a more scalable state management structure utilizing Redux toolkit. Apart from being the main contributor in one of the projects, some bigger pieces I implemented include writing most of the data input UI using react data grid, create middleware responsible for data validation and calculation, create a web worker implementation for handling heavy calculations, write algorithms for traversing and merging tree structures, and create an interactive chart using the Victory charts library.',
 			'I worked in a team with five other developers, following scrum/kanban. Apart from development I was also involved in design desicions regarding the UI/UX, using FIgma for maintaining an interactive mockup.'
+		]
+	},
+	{
+		title: 'Software Consultant',
+		imgSrc: saltLogo,
+		timestamp: 'Aug 2019 - Jan 2020',
+		subtitle: 'School of Applied Technology - Stockholm, Sweden',
+		text: [
+			'After completing the developer bootcamp with SALT and while interviewing for assignments, I worked full-time on a platform for facilitating future SALT bootcamps. The purpose was to have role-based user accounts where students and teachers could upload and download course material, teachers could create a course plan, fequently asked questions could be answered etc.',
+			'During these five months, I implemented an authentication flow via Github including server sessions, a complete file uploading flow from drag n drop in the front end to binary storage in the backend, a course scheduling module, a test assignment module, and front-end navigation with breadcrumbs. I also created a UI design in Pixelmator and Invision to help unify the look and feel of the application.'
 		]
 	}
 ];
