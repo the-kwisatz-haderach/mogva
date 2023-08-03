@@ -62,7 +62,7 @@
 
 	.header-content {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		gap: 3rem;
 	}
 
@@ -83,6 +83,7 @@
 		img {
 			width: 150px;
 			height: 150px;
+			margin-bottom: 1rem;
 		}
 	}
 </style>

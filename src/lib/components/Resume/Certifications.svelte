@@ -3,7 +3,7 @@
 	import { certifications } from './certifications';
 </script>
 
-<Typography variant="h3">Certificates & Courses</Typography>
+<Typography variant="h3">Certificates & courses</Typography>
 <ul>
 	{#each certifications as certification}
 		<li class="certification">

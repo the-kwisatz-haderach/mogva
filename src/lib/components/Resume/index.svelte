@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Exercism from '$lib/assets/icons/Exercism.svelte';
+	import Github from '$lib/assets/icons/Github.svelte';
+	import LinkedinIn from '$lib/assets/icons/LinkedinIn.svelte';
 	import ExperienceList from '../ExperienceList/ExperienceList.svelte';
 	import Icon from '../Logo';
 	import Typography from '../Typography/Typography.svelte';
@@ -14,15 +17,22 @@
 				<Icon.Text style="font-size: 2rem" />
 			</div>
 			<div class="social">
-				<Typography color="contrast">GITHUB</Typography>
-				<Typography color="contrast">LINKEDIN</Typography>
+				<a href="https://github.com/the-kwisatz-haderach" target="_blank">
+					<Github class="icon" />
+				</a>
+				<a href="https://www.linkedin.com/in/gustaf-lundstr%C3%B6m/" target="_blank">
+					<LinkedinIn class="icon" />
+				</a>
+				<a href="https://exercism.org/profiles/KwisatzHaderach" target="_blank">
+					<Exercism class="icon" />
+				</a>
 			</div>
 		</div>
 		<div class="wrapper">
 			<Header />
 			<main>
 				<section>
-					<Typography variant="h2">Experience</Typography>
+					<Typography variant="h2">Assignments & experience</Typography>
 					<ExperienceList items={experiences} />
 				</section>
 				<Sidebar />
@@ -32,6 +42,16 @@
 </div>
 
 <style lang="scss">
+	:global(.icon) {
+		width: 25px;
+		height: 25px;
+		fill: #fff;
+		transition: transform 0.2s ease-in-out;
+		&:hover {
+			transform: scale(1.3);
+		}
+	}
+
 	.container {
 		background-color: rgba(0, 0, 0, 0.98);
 	}
