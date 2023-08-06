@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Tag from '../Tag.svelte';
 	import Typography from '../Typography/Typography.svelte';
 	import type { Item } from './types';
 	export let items: Item[] = [];
@@ -23,12 +24,23 @@
 				{#each item.text as t}
 					<Typography class="text" size="sm">{t}</Typography>
 				{/each}
+				<ul class="tag-list">
+					{#each item.tags as tag}
+						<Tag size="xs" label={tag} />
+					{/each}
+				</ul>
 			</div>
 		</li>
 	{/each}
 </ul>
 
 <style lang="scss">
+	.tag-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin-top: 1rem;
+	}
 	.flex {
 		display: flex;
 		gap: 1rem;

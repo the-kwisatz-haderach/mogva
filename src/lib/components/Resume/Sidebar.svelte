@@ -1,11 +1,22 @@
 <script lang="ts">
+	import Tag from '../Tag.svelte';
 	import Typography from '../Typography/Typography.svelte';
 	import Certifications from './Certifications.svelte';
 	import { educations } from './educations';
-	import { skills } from './skills';
+	import { experienceTags } from './experiences';
 </script>
 
 <aside>
+	<section class="skills-section">
+		<Typography variant="h3">Key skills</Typography>
+		<ul class="skills">
+			{#each [...experienceTags.keys()].filter((tag) => experienceTags
+					.get(tag)
+					?.includes('highlight')) as skill}
+				<li><Tag size="xs" label={skill} /></li>
+			{/each}
+		</ul>
+	</section>
 	<section class="education-section">
 		<Typography variant="h3">Education</Typography>
 		<ul class="education-list">
@@ -30,14 +41,6 @@
 	</section>
 	<section class="certifications-section">
 		<Certifications />
-	</section>
-	<section class="skills-section">
-		<Typography variant="h3">Top skills</Typography>
-		<ul class="skills">
-			{#each skills as skill}
-				<li class="tag"><Typography size="xs">{skill}</Typography></li>
-			{/each}
-		</ul>
 	</section>
 	<section>
 		<Typography variant="h3">Personal</Typography>
@@ -104,13 +107,6 @@
 		gap: 0px 6px;
 	}
 
-	.tag {
-		background-color: var(--color-bg-secondary);
-		padding: 2px 8px;
-		border-radius: 1rem;
-		height: fit-content;
-	}
-
 	@media print {
 		.language-list {
 			display: flex;
@@ -121,7 +117,6 @@
 			}
 		}
 		section {
-			// max-width: 50%;
 			flex: 1 1 40%;
 		}
 		.education-section {

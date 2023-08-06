@@ -33,7 +33,7 @@
 			<main>
 				<section>
 					<Typography variant="h2">Assignments & experience</Typography>
-					<ExperienceList items={experiences} />
+					<ExperienceList items={Object.values(experiences)} />
 				</section>
 				<Sidebar />
 			</main>

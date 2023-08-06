@@ -19,7 +19,7 @@
 			<div class="contact-details">
 				<span>Stockholm, Sweden</span>
 				<a class="contrast" href="tel:+46729000451">(+46) 729-00 04 51</a>
-				<a class="contrast" href="mailto:gustaflundstr90@gmail.com">gustaflundstr90@gmail.com</a>
+				<a class="contrast" href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</a>
 			</div>
 		</div>
 	</div>

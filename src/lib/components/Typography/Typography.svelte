@@ -1,8 +1,5 @@
 <script lang="ts">
-	type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-	type Color = 'regular' | 'contrast' | 'subtle';
-	type Weight = '100' | '200' | '300' | '400' | '500' | '600' | '700';
-	type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+	import type { Color, Size, Variant, Weight } from './types';
 
 	const colorMap: Record<Color, string> = {
 		regular: 'var(--color-text-primary)',

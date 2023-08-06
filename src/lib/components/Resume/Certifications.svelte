@@ -6,16 +6,22 @@
 <Typography variant="h3">Certificates & courses</Typography>
 <ul>
 	{#each certifications as certification}
-		<li class="certification">
-			<Typography color="contrast" size="xs">{certification.timestamp}</Typography>
-			<Typography color="contrast" size="xs" weight="600">{certification.name}</Typography>
-			<Typography color="contrast" size="xs">{certification.institute}</Typography>
-		</li>
+		<a href={certification.link} target="_blank">
+			<li class="certification">
+				<Typography color="contrast" size="xs">{certification.timestamp}</Typography>
+				<Typography color="contrast" size="xs" weight="600">{certification.name}</Typography>
+				<Typography color="contrast" size="xs">{certification.institute}</Typography>
+			</li>
+		</a>
 	{/each}
 </ul>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
+	a:hover {
+		text-decoration: none;
+	}
 
 	ul {
 		display: flex;
@@ -38,7 +44,11 @@
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
+		&:hover::after {
+			opacity: 0.4;
+		}
 		&::after {
+			transition: opacity 0.2s ease-in-out;
 			content: '';
 			position: absolute;
 			left: 1rem;
