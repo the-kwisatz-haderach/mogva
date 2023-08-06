@@ -35,7 +35,7 @@ export const experienceTags = new Map<string, ExperienceKey[]>([
 	['Golang', ['highlight', 'qlikLicenses']],
 	['Grafana', ['qlikLicenses']],
 	[
-		'JavaScript',
+		'Javascript',
 		['highlight', 'systecon', 'salt', 'qlikLicenses', 'ingkaFavourites', 'helioSpectra']
 	],
 	['LaunchDarkly', ['qlikLicenses']],
@@ -48,7 +48,9 @@ export const experienceTags = new Map<string, ExperienceKey[]>([
 	['Splunk', ['qlikLicenses']],
 	['Enzyme', ['systecon']],
 	['Testing Library', ['highlight', 'qlikLicenses', 'ingkaFavourites']],
-	['TypeScript', ['highlight', 'qlikLicenses', 'ingkaFavourites', 'salt', 'helioSpectra']]
+	['Typescript', ['highlight', 'qlikLicenses', 'ingkaFavourites', 'salt', 'helioSpectra']],
+	['Storyblok CMS', ['highlight']],
+	['Svelte', ['highlight']]
 ]);
 
 const experiencesConfig = {
