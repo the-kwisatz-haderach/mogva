@@ -62,4 +62,14 @@
 			height: 250px;
 		}
 	}
+
+	@media print {
+		ul {
+			flex-direction: row;
+		}
+
+		a {
+			flex: 1 0 40%;
+		}
+	}
 </style>
