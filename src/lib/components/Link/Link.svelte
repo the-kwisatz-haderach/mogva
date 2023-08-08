@@ -6,8 +6,6 @@
 	<slot />
 </a>
 
-<!-- <a class="contrast" href="mailto:gustaflundstr90@gmail.com">gustaflundstr90@gmail.com</a> -->
-
 <style lang="scss">
 	a {
 		font-size: 0.9rem;

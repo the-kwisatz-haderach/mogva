@@ -21,6 +21,11 @@
 </div>
 
 <style>
+	div {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		background-color: var(--color-bg-secondary);
+	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;
