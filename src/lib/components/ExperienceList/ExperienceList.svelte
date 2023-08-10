@@ -10,7 +10,7 @@
 		<li>
 			<div>
 				<div class="header-wrapper">
-					<div class="header">
+					<div class="experience-header">
 						<div class="flex">
 							<img src={item.imgSrc} alt={item.subtitle} />
 							<Typography weight="500">{item.title}</Typography>
@@ -92,7 +92,7 @@
 		width: 100%;
 	}
 
-	.header {
+	.experience-header {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;

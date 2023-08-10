@@ -14,7 +14,9 @@
 	<article>
 		<div class="header-top">
 			<div class="logo">
-				<Icon.Text style="font-size: 2rem" />
+				<a href="/">
+					<Icon.Text style="font-size: 2rem" />
+				</a>
 			</div>
 			<div class="social">
 				<a href="https://github.com/the-kwisatz-haderach" target="_blank">
