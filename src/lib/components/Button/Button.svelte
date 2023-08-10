@@ -1,23 +1,43 @@
-<button class="root"><slot /></button>
+<script lang="ts">
+	export let as: 'button' | 'a' = 'button';
+	export let href = '';
 
-<style>
+	const onClick =
+		as === 'button'
+			? () => {
+					window.location.href = href;
+			  }
+			: undefined;
+</script>
+
+<svelte:element
+	this={as}
+	{...$$props}
+	{href}
+	class={`root ${$$props.class || ''}`}
+	on:click={onClick}
+	role="button"
+	tabindex={0}
+>
+	<slot />
+</svelte:element>
+
+<style lang="scss">
+	@use '$styles/mixins' as m;
 	.root {
+		color: var(--color-text-contrast);
+		@include m.linear-gradient-silver;
+		font-weight: 500;
+		font-size: 1.2rem;
+		border-radius: 4px;
 		width: fit-content;
 		position: relative;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 10px;
-		padding-right: 14px;
+		padding: 12px 20px;
 		transition: transform 0.2s ease-in-out, color 0.2s ease-in-out,
 			background-color 0.2s ease-in-out;
-		transform: translateX(-10px) translateY(-5px);
 		overflow: hidden;
-		/* background-color: black;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.4);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
-		/* box-shadow: 4px 4px 6px -5px #000000; */
+		border: none;
+		cursor: pointer;
 	}
 
 	.root::after {
@@ -31,20 +51,21 @@
 
 	.root::before {
 		content: '';
+		@include m.linear-gradient-black;
 		z-index: -1;
 		position: absolute;
 		inset: 0;
 		width: 100%;
 		height: 100%;
 		transition: clip-path 0.2s linear;
-		clip-path: circle(0% at 50% 50%);
-		background-color: var(--color-bg-secondary);
+		clip-path: circle(0% at 50% 100%);
 	}
 
 	.root:hover,
 	.root:focus {
 		outline: none;
-		transform: translateX(0) translateY(0);
+		color: var(--color-text-contrast);
+		transform: translateX(0);
 	}
 
 	.root:hover::after,
