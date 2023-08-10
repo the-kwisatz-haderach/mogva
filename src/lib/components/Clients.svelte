@@ -6,6 +6,8 @@
 	import systeconLogo from '$lib/assets/images/systecon_logo.png';
 	import Typography from './Typography/Typography.svelte';
 	import Button from './Button/Button.svelte';
+	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
+	import { fade } from 'svelte/transition';
 
 	const images: Array<{ src: string; alt: string }> = [
 		{ src: ikeaLogo, alt: 'IKEA logo' },
@@ -19,19 +21,24 @@
 <div class="wrapper">
 	<div class="angle" />
 	<div class="angle bg-border" />
-	<div class="main">
-		<Typography variant="h3" class="leading" weight="700">Previous assignments include</Typography>
-		<span class="cta">
-			<Button href="/resume">View resume</Button>
-		</span>
-		<ul>
-			{#each images as image}
-				<li>
-					<img src={image.src} alt={image.alt} />
-				</li>
-			{/each}
-		</ul>
-	</div>
+	<IntersectionObserver let:isIntersecting once>
+		<div class="main">
+			<Typography variant="h3" class="leading" weight="700">Previous assignments include</Typography
+			>
+			<span class="cta">
+				<Button href="/resume">View resume</Button>
+			</span>
+			<ul>
+				{#if isIntersecting}
+					{#each images as image, index}
+						<li transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}>
+							<img src={image.src} alt={image.alt} />
+						</li>
+					{/each}
+				{/if}
+			</ul>
+		</div>
+	</IntersectionObserver>
 </div>
 
 <style lang="scss">
