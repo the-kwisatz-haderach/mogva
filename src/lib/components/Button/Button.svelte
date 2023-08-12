@@ -25,11 +25,11 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	.root {
-		color: var(--color-text-contrast);
 		@include m.linear-gradient-silver;
+		@include m.rounded-sm;
+		color: var(--color-text-contrast);
 		font-weight: 500;
 		font-size: 1.2rem;
-		border-radius: 4px;
 		width: fit-content;
 		position: relative;
 		padding: 12px 20px;

@@ -40,10 +40,30 @@
 }
 
 @mixin linear-gradient-black {
-	background-image: linear-gradient(140deg, #020202, #303030);
+	background-image: linear-gradient(160deg, #020202, #303030);
+}
+
+@mixin linear-gradient-black-reverse {
+	background-image: linear-gradient(160deg, #303030, #020202);
 }
 
 @mixin padded {
 	padding-left: 70px;
 	padding-right: 70px;
+}
+
+@mixin rounded-sm {
+	border-radius: 6px;
+}
+
+@mixin rounded-md {
+	border-radius: 12px;
+}
+
+@mixin rounded-lg {
+	border-radius: 16px;
+}
+
+@mixin shadow-md {
+	box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.15), 0 50px 100px -20px rgba(23, 41, 64, 0.25);
 }

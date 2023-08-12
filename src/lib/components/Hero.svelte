@@ -7,28 +7,40 @@
 	const transitionOptions: BlurParams = {
 		easing: cubicInOut,
 		duration: 1000,
-		delay: 200,
+		delay: 500,
 		amount: '1rem',
 		opacity: 1
 	};
 </script>
 
-<header class="wrapper">
-	<IntersectionObserver class="header" let:isIntersecting once>
+<header>
+	<IntersectionObserver let:isIntersecting once>
 		{#if isIntersecting}
-			<div class="content-container" transition:blur={transitionOptions}>
-				<Typography size="lg" class="ingress" color="contrast">
-					No-nonsense fullstack web development
-				</Typography>
-				<Typography class="heading" variant="h1" size="xxxl" color="contrast">
-					Specialised in building safe, scalable, reliable & user friendly applications for the web.
-				</Typography>
+			<div class="header" transition:blur={transitionOptions}>
+				<div class="content-container">
+					<Typography size="lg" class="ingress" color="contrast">
+						No-nonsense fullstack web development
+					</Typography>
+					<Typography class="heading" variant="h1" size="xxxl" color="contrast">
+						Specialised in building safe, scalable, reliable & user friendly applications for the
+						web.
+					</Typography>
+				</div>
+				<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
 			</div>
-			<img
-				transition:blur={transitionOptions}
-				src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png"
-				alt=""
-			/>
+		{:else}
+			<div class="header" style:visibility="hidden">
+				<div class="content-container">
+					<Typography size="lg" class="ingress" color="contrast">
+						No-nonsense fullstack web development
+					</Typography>
+					<Typography class="heading" variant="h1" size="xxxl" color="contrast">
+						Specialised in building safe, scalable, reliable & user friendly applications for the
+						web.
+					</Typography>
+				</div>
+				<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
+			</div>
 		{/if}
 	</IntersectionObserver>
 </header>

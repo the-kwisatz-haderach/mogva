@@ -1,18 +1,39 @@
 <script lang="ts">
-	import Typography from './Typography/Typography.svelte';
-	import type { Size } from './Typography/types';
+	type Size = 'sm' | 'md' | 'lg';
+	type Color = 'default' | 'contrast';
 
-	export let label = '';
 	export let size: Size = 'md';
+	export let color: Color = 'default';
 </script>
 
-<Typography class="tag" {size}>{label}</Typography>
+<p {...$$props} class={`tag ${size} ${color}`}><slot /></p>
 
 <style lang="scss">
-	:global(.tag) {
-		background-color: var(--color-bg-secondary);
+	@use '$styles/mixins' as m;
+	.tag {
+		@include m.rounded-lg;
 		padding: 2px 8px;
-		border-radius: 1rem;
 		height: fit-content;
+		width: fit-content;
+		&.default {
+			background-color: var(--color-bg-secondary);
+			color: var(--color-text-primary);
+		}
+		&.contrast {
+			background-color: var(--color-bg-primary);
+			color: var(--color-text-contrast);
+		}
+		&.sm {
+			padding: 2px 8px;
+			font-size: 0.8rem;
+		}
+		&.md {
+			padding: 2px 8px;
+			font-size: 1rem;
+		}
+		&.lg {
+			padding: 6px 12px;
+			font-size: 1.4rem;
+		}
 	}
 </style>

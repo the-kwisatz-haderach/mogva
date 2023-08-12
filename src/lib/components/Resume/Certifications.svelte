@@ -33,11 +33,11 @@
 
 	.certification {
 		@include m.linear-gradient-black;
+		@include m.rounded-sm;
 		padding: 2rem 1.4rem;
 		flex: 1 0 40%;
 		margin: 0;
 		height: fit-content;
-		border-radius: 6px;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
