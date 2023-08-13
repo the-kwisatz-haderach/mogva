@@ -13,6 +13,5 @@
 		@include m.linear-gradient-black-reverse;
 		height: 360px;
 		background-color: var(--color-bg-subtle);
-		// @include m.linear-gradient-silver;
 	}
 </style>

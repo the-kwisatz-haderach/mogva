@@ -28,11 +28,11 @@
 			font-size: 0.8rem;
 		}
 		&.md {
-			padding: 2px 8px;
+			padding: 5px 14px;
 			font-size: 1rem;
 		}
 		&.lg {
-			padding: 6px 12px;
+			padding: 0.5rem 1rem;
 			font-size: 1.4rem;
 		}
 	}

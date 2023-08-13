@@ -18,7 +18,7 @@
 		<Skills />
 		<About />
 	</div>
-	<Contact />
+	<!-- <Contact /> -->
 </div>
 
 <style lang="scss">

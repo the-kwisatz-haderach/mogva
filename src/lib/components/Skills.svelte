@@ -26,32 +26,29 @@
 		<IntersectionObserver let:isIntersecting once>
 			<Typography variant="h2" size="xxl">Skills & Experience</Typography>
 			<div class="section">
-				<div>
-					<Typography size="lg"
-						>With more than 8 years in the industry, I know a thing or two about...</Typography
-					>
-					<ul>
-						{#each skills as skill, i (skill)}
-							{#if isIntersecting}
-								<li
-									in:fly|global={{
-										y: 200,
-										x: (i % 2 === 0 ? 1 : -1) * 400,
-										duration: 500,
-										delay: 1000 + Math.max(2000 - currentIndex * 500, 0) + 250 * i
-									}}
-								>
-									<Tag color="contrast" size="lg">{skill}</Tag>
-								</li>
-							{:else}
-								<li style:visibility="hidden">
-									<Tag color="contrast" size="lg">{skill}</Tag>
-								</li>
-							{/if}
-						{/each}
-					</ul>
-				</div>
-				<div>Second</div>
+				<Typography size="lg"
+					>With more than 8 years in the industry, I know a thing or two about...</Typography
+				>
+				<ul>
+					{#each skills as skill, i (skill)}
+						{#if isIntersecting}
+							<li
+								in:fly|global={{
+									y: 200,
+									x: (i % 2 === 0 ? 1 : -1) * 400,
+									duration: 500,
+									delay: 1000 + Math.max(2000 - currentIndex * 500, 0) + 250 * i
+								}}
+							>
+								<Tag color="contrast">{skill}</Tag>
+							</li>
+						{:else}
+							<li style:visibility="hidden">
+								<Tag color="contrast">{skill}</Tag>
+							</li>
+						{/if}
+					{/each}
+				</ul>
 			</div>
 			<Button href="/resume">View resume</Button>
 		</IntersectionObserver>
@@ -121,14 +118,9 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		margin-bottom: 2rem;
 		& > div:first-of-type {
 			flex: 1;
-		}
-		& > div:last-of-type {
-			max-width: 300px;
-			flex: 1;
-			border-left: 1px solid var(--color-bg-subtle);
 		}
 	}
 </style>

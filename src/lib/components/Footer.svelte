@@ -5,43 +5,60 @@
 </script>
 
 <footer>
-	<div class="footer-main">
-		<div>Col 1</div>
-		<div>Col 2</div>
+	<div class="container">
+		<Typography color="contrast" variant="h2">Contact</Typography>
+		<div class="footer-main">
+			<div>
+				<div>
+					<Typography weight="600" color="contrast">Mogva AB</Typography>
+					<Typography weight="300" color="contrast">Gustaf Lundström</Typography>
+					<Typography weight="300" color="contrast">Graphiste</Typography>
+					<Typography weight="300" color="contrast">Webdesigner</Typography>
+					<Typography weight="300" color="contrast">Développeur front-end</Typography>
+				</div>
+				<div>
+					<Typography color="contrast">Phone: 0729 000 451</Typography>
+					<Typography color="contrast">Email: gustaf.lundstrom@mogva.dev</Typography>
+				</div>
+			</div>
+			<div>Col 2</div>
+		</div>
+		<div class="footer-bottom">
+			<Typography color="contrast" size="xs">© {currentYear} Mogva AB</Typography>
+			<Large width={50} />
+		</div>
 	</div>
-	<Typography color="contrast" size="xs">© {currentYear} Mogva AB</Typography>
-	<Large width={50} />
 </footer>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.container {
+		max-width: 1200px;
+		padding-top: 6rem;
+		padding-bottom: 4rem;
+		padding-right: 4rem;
+		padding-left: 4rem;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+	}
 	footer {
 		@include m.linear-gradient-black-reverse;
 		display: flex;
-		flex-direction: column;
-		min-height: 400px;
+		width: 100%;
 	}
 
 	.footer-main {
-		padding: 4rem;
 		flex: 1;
 		display: flex;
 		gap: 1rem;
-		& > div {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
 	}
 
 	.footer-bottom {
-		height: 50px;
-		border-top: 1px solid rgba(255, 255, 255, 0.15);
-		background-color: black;
-		padding: 2rem;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		justify-content: space-between;
 	}
 	@media print {
 		footer {

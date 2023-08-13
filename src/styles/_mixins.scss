@@ -39,6 +39,10 @@
 	background-image: linear-gradient(240deg, #cecece, #999999);
 }
 
+@mixin linear-gradient-silver-reverse {
+	background-image: linear-gradient(240deg, #999999, #cecece);
+}
+
 @mixin linear-gradient-black {
 	background-image: linear-gradient(160deg, #020202, #303030);
 }

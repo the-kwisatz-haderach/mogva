@@ -5,6 +5,10 @@
 <div class="wrapper">
 	<div class="container">
 		<Typography variant="h2">About</Typography>
+		<Typography
+			>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita velit nostrum deserunt
+			sequi cupiditate. Doloremque illo officia minus doloribus facilis.</Typography
+		>
 	</div>
 	<div class="angle" />
 </div>
@@ -13,10 +17,8 @@
 	@use '$styles/mixins' as m;
 	.container {
 		@include m.shadow-md;
-		@include m.linear-gradient-black-reverse;
+		@include m.linear-gradient-silver-reverse;
 		@include m.rounded-md;
-		position: relative;
-		bottom: 0;
 		margin: auto;
 		padding: 4rem;
 		max-width: 1200px;
@@ -26,6 +28,7 @@
 		position: relative;
 		padding: 2rem 4rem;
 		z-index: 1;
+		margin-bottom: 3rem;
 	}
 
 	.angle {
