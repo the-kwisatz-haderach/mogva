@@ -1,33 +1,113 @@
 <script>
 	import About from '$lib/components/About.svelte';
+	import AngledSection from '$lib/components/AngledSection/AngledSection.svelte';
+	import Block from '$lib/components/Block/Block.svelte';
 	import Clients from '$lib/components/Clients.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import NavBar from '$lib/components/NavBar/NavBar.svelte';
+	import Services from '$lib/components/Services.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="inner-wrapper">
+	<div class="nav-wrapper">
 		<NavBar />
+	</div>
+	<div class="intro-wrapper">
 		<Hero />
-		<Clients />
+		<AngledSection withTop withBottom>
+			<Services />
+			<Skills />
+			<Clients />
+		</AngledSection>
 	</div>
 	<div class="pattern">
-		<Skills />
-		<About />
+		<div class="skills-wrapper">
+			<Block>
+				<Clients />
+			</Block>
+			<div class="angle" />
+			<div class="angle bg-border" />
+		</div>
+		<div class="about-wrapper">
+			<About />
+			<div class="angle" />
+		</div>
 	</div>
 	<!-- <Contact /> -->
 </div>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.about-wrapper {
+		position: relative;
+		padding: 2rem 4rem;
+		z-index: 1;
+		margin-bottom: 3rem;
+		& > .angle {
+			z-index: -1;
+			position: absolute;
+			top: 10%;
+			right: 0;
+			bottom: -12%;
+			left: 0;
+			overflow: hidden;
+			&::before {
+				content: '';
+				top: 10%;
+				left: -10%;
+				width: 120%;
+				height: 100%;
+				position: absolute;
+				background-color: var(--color-bg-paper);
+				transform: rotate(-3deg);
+			}
+		}
+	}
+	.bg-border {
+		z-index: -1;
+		&::before {
+			content: '';
+			top: 0%;
+			left: -10%;
+			width: 120%;
+			height: 80%;
+			position: absolute;
+			transform: rotate(-3deg);
+		}
+	}
+
+	.angle {
+		position: absolute;
+		top: 10%;
+		right: 0;
+		pointer-events: none;
+		bottom: -12%;
+		left: 0;
+		overflow: hidden;
+	}
+
+	.skills-wrapper {
+		position: relative;
+		padding: 8rem 4rem;
+		z-index: 1;
+	}
+
+	.nav-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+	}
 	.wrapper {
 		position: relative;
 		background-color: rgba(0, 0, 0, 0.95);
 	}
-	.inner-wrapper {
+	.intro-wrapper {
+		padding-top: 150px;
 		@include m.linear-gradient-black;
 	}
 
