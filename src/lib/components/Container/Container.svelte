@@ -10,6 +10,7 @@
 </div>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	.wrapper {
 		padding-left: calc(70px + 4rem);
 		padding-right: calc(70px + 4rem);
@@ -20,6 +21,8 @@
 		}
 		&.black-dark {
 			background-color: var(--color-bg-primary-dark);
+			border-top: 1px solid rgba(255, 255, 255, 0.2);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 		}
 		&.subtle {
 			background-color: var(--color-bg-subtle);

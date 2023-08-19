@@ -27,6 +27,7 @@
 
 	$border-size: 1px;
 	$border-length: 100%;
+	$border-color: rgba(255, 255, 255, 0.2);
 	$transform-speed: 0.3s;
 
 	.link {
@@ -59,7 +60,8 @@
 			left: 0;
 			width: $border-size;
 			height: $border-length;
-			@include m.linear-gradient-black;
+			background-color: $border-color;
+			// @include m.linear-gradient-black;
 			transform: scaleY(0);
 			transform-origin: top left;
 			transition: transform $transform-speed;
@@ -72,7 +74,8 @@
 			right: 0;
 			width: $border-size;
 			height: $border-length;
-			@include m.linear-gradient-black;
+			background-color: $border-color;
+			// @include m.linear-gradient-black;
 			transform: scaleY(0);
 			transform-origin: bottom right;
 			transition: transform $transform-speed;
@@ -87,7 +90,8 @@
 				left: 0;
 				width: $border-length;
 				height: $border-size;
-				@include m.linear-gradient-black;
+				background-color: $border-color;
+				// @include m.linear-gradient-black;
 				transform: scaleX(0);
 				transform-origin: top left;
 				transition: transform $transform-speed;
@@ -100,7 +104,8 @@
 				right: 0;
 				width: $border-length;
 				height: $border-size;
-				@include m.linear-gradient-black;
+				background-color: $border-color;
+				// @include m.linear-gradient-black;
 				transform: scaleX(0);
 				transform-origin: bottom right;
 				transition: transform $transform-speed;
@@ -128,20 +133,24 @@
 		}
 		& > .inner-wrapper {
 			&::before {
-				@include m.linear-gradient-silver;
+				// @include m.linear-gradient-silver;
+				background-color: $border-color;
 			}
 
 			&::after {
-				@include m.linear-gradient-silver;
+				// @include m.linear-gradient-silver;
+				background-color: $border-color;
 			}
 			& > .link {
 				color: var(--color-text-contrast);
 				&::before {
-					@include m.linear-gradient-silver;
+					// @include m.linear-gradient-silver;
+					background-color: $border-color;
 				}
 
 				&::after {
-					@include m.linear-gradient-silver;
+					// @include m.linear-gradient-silver;
+					background-color: $border-color;
 				}
 			}
 		}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Link from './Link/Link.svelte';
 	import Large from './Logo/Large.svelte';
 	import Typography from './Typography/Typography.svelte';
 	const currentYear = new Date().getFullYear();
@@ -6,32 +7,51 @@
 
 <footer id="contact">
 	<div class="container">
-		<Typography color="contrast" variant="h2">Contact</Typography>
 		<div class="footer-main">
-			<div>
-				<div>
-					<Typography weight="600" color="contrast">Mogva AB</Typography>
-					<Typography weight="300" color="contrast">Gustaf Lundström</Typography>
-					<Typography weight="300" color="contrast">Graphiste</Typography>
-					<Typography weight="300" color="contrast">Webdesigner</Typography>
-					<Typography weight="300" color="contrast">Développeur front-end</Typography>
-				</div>
-				<div>
-					<Typography color="contrast">Phone: 0729 000 451</Typography>
-					<Typography color="contrast">Email: gustaf.lundstrom@mogva.dev</Typography>
-				</div>
+			<div class="col">
+				<Typography variant="h3" weight="600" color="contrast">Mogva AB</Typography>
+				<ul>
+					<li>
+						<Typography color="contrast">Gustaf Lundström</Typography>
+					</li>
+					<li>
+						<Typography color="contrast">Fullstack Software Engineer</Typography>
+					</li>
+					<li>
+						<Link href="tel:+46729000451">(+46) 729 000 451</Link>
+					</li>
+					<li>
+						<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
+					</li>
+				</ul>
 			</div>
-			<div>Col 2</div>
+			<div class="col">
+				<Typography variant="h3" weight="600" color="contrast">Social</Typography>
+				<ul>
+					<li><Link href="/">LinkedIn</Link></li>
+					<li><Link href="/">Github</Link></li>
+					<li><Link href="/">Exercism</Link></li>
+				</ul>
+			</div>
+			<div class="col">Mogva</div>
 		</div>
 		<div class="footer-bottom">
 			<Typography color="contrast" size="xs">© {currentYear} Mogva AB</Typography>
-			<Large width={50} />
 		</div>
 	</div>
 </footer>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.col:last-child {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 6rem;
+		color: var(--color-text-contrast);
+		font-family: var(--font-secondary);
+	}
 	.container {
 		width: 100%;
 		margin: auto;
@@ -39,22 +59,26 @@
 		flex-direction: column;
 	}
 	footer {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		@include m.linear-gradient-black-dark-reverse;
 		display: flex;
 		width: 100%;
-		padding-top: 6rem;
+		padding-top: 8rem;
+		padding-bottom: 2rem;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 	.footer-main {
 		flex: 1;
 		display: flex;
-		gap: 1rem;
+		gap: 4rem;
+		justify-content: space-evenly;
 	}
 
 	.footer-bottom {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		width: 100%;
+		margin-top: 5rem;
 	}
 	@media print {
 		footer {

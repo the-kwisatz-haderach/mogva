@@ -49,6 +49,7 @@
 
 	.root.black {
 		@include m.linear-gradient-black-dark;
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	.root::after {

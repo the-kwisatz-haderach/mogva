@@ -56,11 +56,11 @@
 }
 
 @mixin linear-gradient-black-dark {
-	background-image: linear-gradient(160deg, #161616, #000);
+	background-image: linear-gradient(160deg, #1c1c1c, #000);
 }
 
 @mixin linear-gradient-black-dark-reverse {
-	background-image: linear-gradient(160deg, #000, #161616);
+	background-image: linear-gradient(160deg, #000, #1c1c1c);
 }
 
 @mixin linear-gradient-black-reverse {
