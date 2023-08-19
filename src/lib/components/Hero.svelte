@@ -47,6 +47,12 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	header {
+		height: calc(100vh + 3rem);
+		margin-bottom: -3rem;
+		padding-bottom: 3rem;
+		@include m.linear-gradient-black-dark;
+	}
 	:global(.ingress) {
 		text-transform: uppercase;
 		opacity: 0.4;
@@ -58,7 +64,7 @@
 	}
 	:global(.header) {
 		@include m.padded;
-		min-height: calc(100vh - 120px);
+		height: 100%;
 		gap: 4rem;
 		display: flex;
 		align-items: flex-end;
@@ -68,8 +74,9 @@
 	img {
 		position: relative;
 		width: 350px;
-		top: 20px;
+		top: 40px;
 		display: block;
+		// z-index: 1;
 	}
 
 	.content-container {

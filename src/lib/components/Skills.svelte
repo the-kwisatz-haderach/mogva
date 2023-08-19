@@ -5,17 +5,20 @@
 	import { experienceTags } from './Resume/experiences';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import Button from './Button/Button.svelte';
+	import Container from './Container/Container.svelte';
 
 	const skills = [...experienceTags.keys()];
 </script>
 
-<section class="contained">
-	<Typography variant="h2" size="xxl">Skills & Experience</Typography>
-	<div class="section">
+<Container style="margin-top: -8rem;">
+	<div class="content-wrapper">
+		<Typography variant="h2">Toolset</Typography>
 		<IntersectionObserver let:isIntersecting once>
-			<Typography size="lg"
-				>With more than 8 years in the industry, I know a thing or two about...</Typography
-			>
+			<Typography>
+				With more than 8 years in the industry, I've picked up a wide range of skills to leverage in
+				the different stages of development. Be it designing, developing, testing, deploying or
+				analysing & optimising software.
+			</Typography>
 			<ul>
 				{#each skills as skill, i (skill)}
 					{#if isIntersecting}
@@ -23,8 +26,8 @@
 							in:fly|global={{
 								y: 200,
 								x: (i % 2 === 0 ? 1 : -1) * 400,
-								duration: 500,
-								delay: 1000 + i * 200
+								duration: 300,
+								delay: 2000 + i * 100
 							}}
 						>
 							<Tag color="contrast">{skill}</Tag>
@@ -37,17 +40,17 @@
 				{/each}
 			</ul>
 		</IntersectionObserver>
+		<Button href="/resume" color="black">View full resume</Button>
 	</div>
-	<Button href="/resume">View resume</Button>
-</section>
+</Container>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
-
 	ul {
 		display: inline-flex;
 		gap: 8px 4px;
 		margin-top: 2rem;
+		margin-bottom: 3rem;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
@@ -56,20 +59,11 @@
 		margin-bottom: 0;
 	}
 
-	section {
-		padding: 2rem 4rem;
-		text-align: center;
-		overflow: hidden;
+	.content-wrapper {
 		position: relative;
-	}
-
-	.section {
-		height: 100%;
+		text-align: center;
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 2rem;
-		& > div:first-of-type {
-			flex: 1;
-		}
+		align-items: center;
 	}
 </style>

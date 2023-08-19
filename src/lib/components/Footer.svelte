@@ -4,7 +4,7 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer>
+<footer id="contact">
 	<div class="container">
 		<Typography color="contrast" variant="h2">Contact</Typography>
 		<div class="footer-main">
@@ -33,20 +33,16 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	.container {
-		max-width: 1200px;
-		padding-top: 6rem;
-		padding-bottom: 4rem;
-		padding-right: 4rem;
-		padding-left: 4rem;
 		width: 100%;
 		margin: auto;
 		display: flex;
 		flex-direction: column;
 	}
 	footer {
-		@include m.linear-gradient-black-reverse;
+		@include m.linear-gradient-black-dark-reverse;
 		display: flex;
 		width: 100%;
+		padding-top: 6rem;
 	}
 
 	.footer-main {

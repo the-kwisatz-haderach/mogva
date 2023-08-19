@@ -13,7 +13,7 @@
 			{#each [...experienceTags.keys()].filter((tag) => experienceTags
 					.get(tag)
 					?.includes('highlight')) as skill}
-				<li><Tag size="xs" label={skill} /></li>
+				<li><Tag size="sm">{skill}</Tag></li>
 			{/each}
 		</ul>
 	</section>

@@ -20,8 +20,9 @@
 			color: var(--color-text-primary);
 		}
 		&.contrast {
-			background-color: var(--color-bg-primary);
+			background-color: var(--color-bg-primary-dark);
 			color: var(--color-text-contrast);
+			border: 1px solid rgba(255, 255, 255, 0.1);
 		}
 		&.sm {
 			padding: 2px 8px;

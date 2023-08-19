@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let as: 'button' | 'a' = 'button';
 	export let href = '';
-
+	export let color: 'black' | 'blue' | 'default' = 'default';
 	const onClick =
 		as === 'button'
 			? () => {
@@ -14,7 +14,7 @@
 	this={as}
 	{...$$props}
 	{href}
-	class={`root ${$$props.class || ''}`}
+	class={`root ${$$props.class || ''} ${color}`}
 	on:click={onClick}
 	role="button"
 	tabindex={0}
@@ -25,7 +25,6 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	.root {
-		@include m.linear-gradient-silver;
 		@include m.rounded-sm;
 		color: var(--color-text-contrast);
 		font-weight: 500;
@@ -40,16 +39,30 @@
 		cursor: pointer;
 	}
 
+	.root.default {
+		@include m.linear-gradient-silver;
+	}
+
+	.root.blue {
+		@include m.linear-gradient-blue;
+	}
+
+	.root.black {
+		@include m.linear-gradient-black-dark;
+	}
+
 	.root::after {
 		content: '›';
 		margin-left: 10px;
 		position: relative;
 		bottom: 1px;
+		left: 0;
 		display: inline-block;
-		transform: translateX(0) scale(1.4);
+		transform: translateX(-2px) scale(1.4);
+		transition: transform 0.4s ease-in-out;
 	}
 
-	.root::before {
+	.root.default::before {
 		content: '';
 		@include m.linear-gradient-black;
 		z-index: -1;
@@ -70,17 +83,17 @@
 
 	.root:hover::after,
 	.root:focus::after {
-		animation: swing 0.4s ease-in-out infinite forwards alternate-reverse;
+		animation: swing 0.3s ease-in-out infinite alternate;
 	}
 
-	.root:hover::before,
-	.root:focus::before {
+	.root.default:hover::before,
+	.root.default:focus::before {
 		clip-path: circle(100% at 50% 50%);
 	}
 
 	@keyframes swing {
 		from {
-			transform: translateX(-1px) scale(1.4);
+			transform: translateX(-2px) scale(1.4);
 		}
 		to {
 			transform: translateX(4px) scale(1.4);

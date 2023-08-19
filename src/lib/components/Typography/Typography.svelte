@@ -32,6 +32,9 @@
 </svelte:element>
 
 <style lang="scss">
+	p:not(:last-of-type) {
+		margin-bottom: 1rem;
+	}
 	p.xs,
 	p.sm {
 		line-height: 1.5;

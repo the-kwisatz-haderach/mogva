@@ -26,7 +26,7 @@
 				{/each}
 				<ul class="tag-list">
 					{#each item.tags as tag}
-						<Tag size="xs" label={tag} />
+						<Tag size="sm">{tag}</Tag>
 					{/each}
 				</ul>
 			</div>

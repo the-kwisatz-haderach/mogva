@@ -2,11 +2,23 @@
 	export let href = '';
 	export let isExternal = false;
 	export let contrast = false;
+	const handleSectionScroll = (e: MouseEvent) => {
+		e.preventDefault();
+		const section = document.getElementById(href.slice(1));
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 </script>
 
 <div class="wrapper" class:contrast>
 	<span class="inner-wrapper">
-		<a class="link" target={isExternal ? '_blank' : undefined} {href}><slot /></a>
+		<a
+			class="link"
+			on:click={href.startsWith('#') ? handleSectionScroll : undefined}
+			target={isExternal ? '_blank' : undefined}
+			{href}><slot /></a
+		>
 	</span>
 </div>
 

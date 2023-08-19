@@ -22,6 +22,7 @@
 		z-index: 1;
 	}
 	.wrapper {
+		margin-top: 6rem;
 		position: relative;
 		z-index: 0;
 		background-color: var(--color-bg-paper);
@@ -40,7 +41,7 @@
 		bottom: 0;
 		&::before {
 			content: '';
-			top: 5%;
+			top: 7%;
 			left: 0;
 			width: 120%;
 			height: 100%;
@@ -80,6 +81,7 @@
 			position: absolute;
 			@include m.linear-gradient-silver;
 			transform: rotate(-3deg);
+			box-shadow: 0px 30px 40px -20px black;
 		}
 	}
 </style>

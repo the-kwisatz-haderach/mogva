@@ -43,8 +43,24 @@
 	background-image: linear-gradient(240deg, #999999, #cecece);
 }
 
+@mixin linear-gradient-blue {
+	background-image: linear-gradient(160deg, #0d008c, #1100ff);
+}
+
+@mixin linear-gradient-blue-reverse {
+	background-image: linear-gradient(160deg, #1100ff, #0d008c);
+}
+
 @mixin linear-gradient-black {
 	background-image: linear-gradient(160deg, #020202, #303030);
+}
+
+@mixin linear-gradient-black-dark {
+	background-image: linear-gradient(160deg, #161616, #000);
+}
+
+@mixin linear-gradient-black-dark-reverse {
+	background-image: linear-gradient(160deg, #000, #161616);
 }
 
 @mixin linear-gradient-black-reverse {
@@ -52,8 +68,8 @@
 }
 
 @mixin padded {
-	padding-left: 70px;
-	padding-right: 70px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 @mixin rounded-sm {
@@ -70,4 +86,8 @@
 
 @mixin shadow-md {
 	box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.15), 0 50px 100px -20px rgba(23, 41, 64, 0.25);
+}
+
+@mixin shadow-sm {
+	box-shadow: 0 15px 0px -40px rgb(0 0 0), 0 50px 40px -50px rgb(0 0 0);
 }

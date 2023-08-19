@@ -8,6 +8,7 @@
 	import Button from './Button/Button.svelte';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import { fade } from 'svelte/transition';
+	import Container from './Container/Container.svelte';
 
 	const images: Array<{ src: string; alt: string }> = [
 		{ src: ikeaLogo, alt: 'IKEA logo' },
@@ -18,29 +19,33 @@
 	];
 </script>
 
-<IntersectionObserver let:isIntersecting once>
+<Container>
 	<div class="main">
-		<Typography variant="h3" class="leading" weight="700"
-			>Here are some companies I've worked with</Typography
+		<Typography variant="h2">Past assignments</Typography>
+		<Typography
+			>I've had the privilege to work with a lot of different companies over the years. These are
+			some of the more recent ones.</Typography
 		>
 		<span class="cta">
-			<Button href="/resume">View resume</Button>
+			<Button color="black" href="/resume">View resume</Button>
 		</span>
-		<ul>
-			{#each images as image, index}
-				{#if isIntersecting}
-					<li transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}>
-						<img src={image.src} alt={image.alt} />
-					</li>
-				{:else}
-					<li style:visibility="hidden">
-						<img src={image.src} alt={image.alt} />
-					</li>
-				{/if}
-			{/each}
-		</ul>
+		<IntersectionObserver let:isIntersecting once>
+			<ul>
+				{#each images as image, index}
+					{#if isIntersecting}
+						<li transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}>
+							<img src={image.src} alt={image.alt} />
+						</li>
+					{:else}
+						<li style:visibility="hidden">
+							<img src={image.src} alt={image.alt} />
+						</li>
+					{/if}
+				{/each}
+			</ul>
+		</IntersectionObserver>
 	</div>
-</IntersectionObserver>
+</Container>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
@@ -61,24 +66,21 @@
 		justify-content: center;
 		gap: 4rem;
 		margin-bottom: 4rem;
-		opacity: 0.6;
+		margin-top: 4rem;
 		max-width: 1200px;
-		filter: saturate(0);
-		transition: opacity 0.3s ease-in-out;
+		filter: saturate(0) invert(1) brightness(0.8);
+		transition: filter 0.3s ease-in-out;
 	}
 
 	.cta {
 		order: 1;
 	}
-	.cta:hover + ul {
-		opacity: 1;
-		filter: saturate(0.9);
+	:global(.cta:hover + * > ul) {
+		filter: saturate(0) invert(1) brightness(1.5);
 	}
 
 	.main {
 		position: relative;
-		padding-top: 4rem;
-		padding-bottom: 4rem;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
