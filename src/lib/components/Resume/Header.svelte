@@ -27,6 +27,9 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.contrast {
+		color: var(--color-text-contrast);
+	}
 
 	.contact-details {
 		display: flex;

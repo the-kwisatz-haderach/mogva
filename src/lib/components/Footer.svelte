@@ -17,6 +17,9 @@
 						<Typography color="contrast">Fullstack Software Engineer</Typography>
 					</li>
 					<li>
+						<Typography color="contrast">Stockholm, Sweden</Typography>
+					</li>
+					<li>
 						<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
 					</li>
 				</ul>

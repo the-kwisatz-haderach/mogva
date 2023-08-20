@@ -1,7 +1,4 @@
 <script>
-	import Exercism from '$lib/assets/icons/Exercism.svelte';
-	import Github from '$lib/assets/icons/Github.svelte';
-	import LinkedinIn from '$lib/assets/icons/LinkedinIn.svelte';
 	import Container from './Container/Container.svelte';
 	import Typography from './Typography/Typography.svelte';
 </script>
@@ -35,27 +32,21 @@
 	.content-wrapper {
 		display: flex;
 		justify-content: space-between;
-		gap: 5rem;
+		gap: 2rem;
 		margin-bottom: -7rem;
 	}
 
 	.image-wrapper {
 		position: relative;
 		bottom: -1rem;
-		width: 200px;
+		width: 320px;
 		height: 400px;
 	}
 
 	.text-wrapper {
+		flex: 1;
 		padding-top: 1rem;
 		position: relative;
 		bottom: 1rem;
-	}
-
-	.social-links {
-		display: flex;
-		justify-content: space-evenly;
-		gap: 2rem;
-		align-items: center;
 	}
 </style>

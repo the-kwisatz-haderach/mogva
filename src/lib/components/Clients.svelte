@@ -29,7 +29,7 @@
 		<span class="cta">
 			<Button color="black" href="/resume">View resume</Button>
 		</span>
-		<IntersectionObserver let:isIntersecting once>
+		<IntersectionObserver top={-250} let:isIntersecting once>
 			<ul>
 				{#each images as image, index}
 					{#if isIntersecting}

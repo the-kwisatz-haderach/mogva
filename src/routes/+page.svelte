@@ -57,7 +57,6 @@
 			</AngledSection>
 		</div>
 	</IntersectionObserver>
-	<Footer />
 </div>
 
 <style lang="scss">

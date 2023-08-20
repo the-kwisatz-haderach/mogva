@@ -1,4 +1,5 @@
 <script>
+	import Footer from '$lib/components/Footer.svelte';
 	import { theme } from '$lib/stores/theme';
 	import '$styles/app.scss';
 </script>
@@ -14,3 +15,4 @@
 </svelte:head>
 <div id="top" />
 <slot />
+<Footer />
