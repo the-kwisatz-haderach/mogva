@@ -5,6 +5,8 @@
 	import Typography from './Typography/Typography.svelte';
 	import Exercism from '$lib/assets/icons/Exercism.svelte';
 	import Email from '$lib/assets/icons/Email.svelte';
+	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
+	import { fly } from 'svelte/transition';
 
 	const links = [
 		{
@@ -39,16 +41,36 @@
 				send me an email.
 			</Typography>
 		</div>
-		<div class="options-container">
-			{#each links as link}
-				<a href={link.href} class="link-block" target="_blank">
-					<div class="icon-wrapper">
-						<svelte:component this={link.icon} width={45} height={45} />
-					</div>
-					<p class="link-label">{link.label}</p>
-				</a>
-			{/each}
-		</div>
+		<IntersectionObserver let:isIntersecting once>
+			{#if isIntersecting}
+				<div class="options-container">
+					{#each links as link, i}
+						<a
+							transition:fly|global={{ duration: 800, delay: 1000 + i * 100, x: '80%', y: '100%' }}
+							href={link.href}
+							class="link-block"
+							target="_blank"
+						>
+							<div class="icon-wrapper">
+								<svelte:component this={link.icon} width={45} height={45} />
+							</div>
+							<p class="link-label">{link.label}</p>
+						</a>
+					{/each}
+				</div>
+			{:else}
+				<div class="options-container">
+					{#each links as link}
+						<a href={link.href} class="link-block" target="_blank">
+							<div class="icon-wrapper">
+								<svelte:component this={link.icon} width={45} height={45} />
+							</div>
+							<p class="link-label">{link.label}</p>
+						</a>
+					{/each}
+				</div>
+			{/if}
+		</IntersectionObserver>
 	</div>
 </Container>
 
