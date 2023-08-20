@@ -18,9 +18,6 @@
 						<Typography color="contrast">Fullstack Software Engineer</Typography>
 					</li>
 					<li>
-						<Link href="tel:+46729000451">(+46) 729 000 451</Link>
-					</li>
-					<li>
 						<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
 					</li>
 				</ul>
@@ -80,6 +77,7 @@
 		width: 100%;
 		margin-top: 5rem;
 	}
+
 	@media print {
 		footer {
 			display: none;

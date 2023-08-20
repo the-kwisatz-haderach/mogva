@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let color: 'default' | 'black' | 'subtle' | 'black-dark' = 'default';
+	export let color: 'default' | 'black' | 'subtle' | 'black-dark' | 'silver' = 'default';
 	export let maxWidth = 1200;
 </script>
 
@@ -16,6 +16,9 @@
 		padding-right: calc(70px + 4rem);
 		padding-top: 8rem;
 		padding-bottom: 7rem;
+		&.silver {
+			@include m.linear-gradient-silver-reverse;
+		}
 		&.black {
 			background-color: var(--color-bg-primary);
 		}

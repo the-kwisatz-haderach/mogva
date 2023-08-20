@@ -13,6 +13,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import throttle from 'lodash.throttle';
+	import Contact from '$lib/components/Contact.svelte';
 
 	let show = false;
 	let prevScrollPos = 0;
@@ -49,6 +50,7 @@
 			{/if}
 			<AngledSection withTop>
 				<Services />
+				<Contact />
 				<Skills />
 				<About />
 				<Clients />

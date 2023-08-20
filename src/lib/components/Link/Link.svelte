@@ -11,6 +11,7 @@
 	a {
 		position: relative;
 		font-weight: 500;
+		color: var(--color-text-contrast);
 		&::before {
 			content: '';
 			width: 100%;

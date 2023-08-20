@@ -5,7 +5,7 @@
 	--color-bg-subtle: var(--color-grey-light);
 	--color-bg-paper: var(--color-black);
 	/* --color-bg-paper: white; */
-	--color-text-primary: var(--color-silver);
+	--color-text-primary: var(--color-black);
 	--color-text-inverse: var(--color-silver);
 	--color-text-contrast: var(--color-silver);
 	--color-text-contrast-inverse: var(--color-black);

@@ -10,11 +10,12 @@
 	const skills = [...experienceTags.keys()];
 </script>
 
-<Container style="margin-top: -8rem;">
+<!-- <Container style="margin-top: -8rem;"> -->
+<Container>
 	<div class="content-wrapper">
-		<Typography variant="h2">Toolset</Typography>
+		<Typography variant="h2" color="contrast">Toolset</Typography>
 		<IntersectionObserver let:isIntersecting once>
-			<Typography>
+			<Typography color="contrast">
 				With more than 8 years in the industry, I've picked up a wide range of skills to leverage in
 				the different stages of development. Be it designing, developing, testing, deploying or
 				analysing & optimising software.

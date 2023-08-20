@@ -21,8 +21,8 @@
 
 <Container>
 	<div class="main">
-		<Typography variant="h2">Past assignments</Typography>
-		<Typography
+		<Typography color="contrast" variant="h2">Past assignments</Typography>
+		<Typography color="contrast"
 			>I've had the privilege to work with a lot of different companies over the years. These are
 			some of the more recent ones.</Typography
 		>

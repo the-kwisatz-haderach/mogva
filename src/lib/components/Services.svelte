@@ -17,8 +17,8 @@
 
 <Container id="knowledge">
 	<div class="content-wrapper">
-		<Typography variant="h2">Knowledge domains</Typography>
-		<Typography
+		<Typography color="contrast" variant="h2">Knowledge domains</Typography>
+		<Typography color="contrast"
 			>I'm profficient in the big pillars of modern web application development.</Typography
 		>
 		<IntersectionObserver let:isIntersecting once>
