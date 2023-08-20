@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Link from './Link/Link.svelte';
-	import Large from './Logo/Large.svelte';
 	import Typography from './Typography/Typography.svelte';
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer id="contact">
+<footer>
 	<div class="container">
 		<div class="footer-main">
 			<div class="col">
@@ -25,9 +24,13 @@
 			<div class="col">
 				<Typography variant="h3" weight="600" color="contrast">Social</Typography>
 				<ul>
-					<li><Link href="/">LinkedIn</Link></li>
-					<li><Link href="/">Github</Link></li>
-					<li><Link href="/">Exercism</Link></li>
+					<li>
+						<Link href="https://www.linkedin.com/in/gustaf-lundstr%C3%B6m/" external>LinkedIn</Link>
+					</li>
+					<li><Link href="https://github.com/the-kwisatz-haderach" external>Github</Link></li>
+					<li>
+						<Link href="https://exercism.org/profiles/KwisatzHaderach" external>Exercism</Link>
+					</li>
 				</ul>
 			</div>
 			<div class="col">Mogva</div>

@@ -5,9 +5,32 @@
 	import Typography from './Typography/Typography.svelte';
 	import Exercism from '$lib/assets/icons/Exercism.svelte';
 	import Email from '$lib/assets/icons/Email.svelte';
+
+	const links = [
+		{
+			label: 'LinkedIn',
+			icon: LinkedinIn,
+			href: 'https://www.linkedin.com/in/gustaf-lundstr%C3%B6m/'
+		},
+		{
+			label: 'Email',
+			icon: Email,
+			href: 'mailto:gustaf.lundstrom@mogva.dev'
+		},
+		{
+			label: 'Github',
+			icon: Github,
+			href: 'https://github.com/the-kwisatz-haderach'
+		},
+		{
+			label: 'Exercism',
+			icon: Exercism,
+			href: 'https://exercism.org/profiles/KwisatzHaderach'
+		}
+	];
 </script>
 
-<Container color="silver" maxWidth={800}>
+<Container id="contact" color="silver" maxWidth={800}>
 	<div class="content-wrapper">
 		<div class="text-container">
 			<Typography variant="h2">Get in touch</Typography>
@@ -17,30 +40,14 @@
 			</Typography>
 		</div>
 		<div class="options-container">
-			<div class="link-block">
-				<div class="icon-wrapper">
-					<LinkedinIn width={45} height={45} />
-				</div>
-				<p class="link-label">LinkedIn</p>
-			</div>
-			<div class="link-block">
-				<div class="icon-wrapper">
-					<Email width={45} height={45} />
-				</div>
-				<p class="link-label">Email</p>
-			</div>
-			<div class="link-block">
-				<div class="icon-wrapper">
-					<Github width={45} height={45} />
-				</div>
-				<p class="link-label">Github</p>
-			</div>
-			<div class="link-block">
-				<div class="icon-wrapper">
-					<Exercism width={45} height={45} />
-				</div>
-				<p class="link-label">Exercism</p>
-			</div>
+			{#each links as link}
+				<a href={link.href} class="link-block" target="_blank">
+					<div class="icon-wrapper">
+						<svelte:component this={link.icon} width={45} height={45} />
+					</div>
+					<p class="link-label">{link.label}</p>
+				</a>
+			{/each}
 		</div>
 	</div>
 </Container>
@@ -93,7 +100,7 @@
 			linear-gradient(145deg, transparent 0%, white, transparent 30%);
 		&::before {
 			@include m.rounded-md;
-			background-color: rgba(255, 255, 255, 0.7);
+			background-color: rgba(255, 255, 255, 0.5);
 			content: '';
 			position: absolute;
 			inset: 0;
@@ -101,7 +108,7 @@
 			width: 100%;
 			height: 100%;
 			z-index: 1;
-			transition: opacity 0.2s linear;
+			transition: opacity 0.3s ease-in-out;
 		}
 		&:hover {
 			&::before {
