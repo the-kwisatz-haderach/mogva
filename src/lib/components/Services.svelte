@@ -89,11 +89,6 @@
 			text-align: center;
 		}
 
-		.service {
-			padding: 3rem 2rem;
-			gap: 1rem;
-		}
-
 		img {
 			width: 80px;
 			height: 80px;

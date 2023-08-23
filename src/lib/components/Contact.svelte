@@ -33,45 +33,35 @@
 </script>
 
 <Container id="contact" color="silver" maxWidth={800}>
-	<div class="content-wrapper">
-		<div class="text-container">
-			<Typography variant="h2">Get in touch</Typography>
-			<Typography weight="400">
-				Do you need help tackling a challenging problem or project? Drop me a line on LinkedIn, or
-				send me an email.
-			</Typography>
-		</div>
-		<IntersectionObserver let:isIntersecting once>
-			{#if isIntersecting}
-				<div class="options-container">
+	<IntersectionObserver let:isIntersecting once>
+		<div class="content-wrapper">
+			<div class="text-container">
+				<Typography variant="h2">Get in touch</Typography>
+				<Typography weight="400">
+					Do you need help tackling a challenging problem or project? Drop me a line on LinkedIn, or
+					send me an email.
+				</Typography>
+			</div>
+			<div class="options-container">
+				{#if isIntersecting}
 					{#each links as link, i}
 						<a
 							transition:fly|global={{ duration: 800, delay: 1000 + i * 100, x: '80%', y: '100%' }}
 							href={link.href}
+							style:visibility={isIntersecting ? 'initial' : 'hidden'}
 							class="link-block"
 							target="_blank"
 						>
 							<div class="icon-wrapper">
-								<svelte:component this={link.icon} width={45} height={45} />
+								<svelte:component this={link.icon} class="icon" />
 							</div>
 							<p class="link-label">{link.label}</p>
 						</a>
 					{/each}
-				</div>
-			{:else}
-				<div class="options-container" style:visibility="hidden">
-					{#each links as link}
-						<a href={link.href} class="link-block" target="_blank">
-							<div class="icon-wrapper">
-								<svelte:component this={link.icon} width={45} height={45} />
-							</div>
-							<p class="link-label">{link.label}</p>
-						</a>
-					{/each}
-				</div>
-			{/if}
-		</IntersectionObserver>
-	</div>
+				{/if}
+			</div>
+		</div>
+	</IntersectionObserver>
 </Container>
 
 <style lang="scss">
@@ -80,25 +70,24 @@
 		display: flex;
 		align-items: flex-end;
 		flex-wrap: wrap;
-		gap: 3rem;
-	}
-
-	.text-container {
-		margin-bottom: 8px;
+		gap: 2rem;
 	}
 
 	.options-container {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		flex-wrap: wrap;
+		flex: 1;
 		align-items: flex-end;
-		gap: 1rem;
+		gap: 0.5rem;
 	}
 
 	:global(.icon-wrapper > *) {
 		fill: var(--color-text-primary);
 		z-index: 2;
 		opacity: 0.8;
+		width: 25px;
+		height: 25px;
 	}
 
 	:global(.icon-wrapper:hover > *) {
@@ -111,7 +100,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 1.5rem;
+		padding: 1rem;
 		cursor: pointer;
 		border: 1px solid transparent;
 		position: relative;
@@ -146,6 +135,7 @@
 	}
 
 	.link-block {
+		flex: 15% 1 1;
 		position: relative;
 	}
 
@@ -162,5 +152,40 @@
 		font-weight: 500;
 		opacity: 0;
 		font-size: 0.9rem;
+	}
+
+	@include m.sm {
+		.icon-wrapper {
+			padding: 1.5rem;
+		}
+	}
+
+	@include m.md {
+		:global(.icon-wrapper > *) {
+			width: 45px;
+			height: 45px;
+		}
+		.options-container {
+			gap: 1rem;
+		}
+		.icon-wrapper {
+			padding: 2rem;
+		}
+	}
+	@include m.lg {
+		.text-container {
+			text-align: left;
+			width: 40%;
+		}
+		:global(.icon-wrapper > *) {
+			width: 40px;
+			height: 40px;
+		}
+		.options-container {
+			gap: 1rem;
+		}
+		.icon-wrapper {
+			padding: 1.5rem;
+		}
 	}
 </style>
