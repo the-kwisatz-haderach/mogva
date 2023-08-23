@@ -37,9 +37,6 @@
 </script>
 
 <div class="wrapper">
-	<div class="nav-wrapper">
-		<NavBar />
-	</div>
 	<Hero />
 	<IntersectionObserver top={-600} let:isIntersecting>
 		<div>
@@ -68,13 +65,7 @@
 		top: 0;
 		z-index: 10;
 	}
-	.nav-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 150px;
-	}
+
 	.wrapper {
 		position: relative;
 	}

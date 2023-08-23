@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let color: 'default' | 'black' | 'subtle' | 'black-dark' | 'silver' = 'default';
 	export let maxWidth = 1200;
+	export let padded = true;
 </script>
 
-<div {...$$props} class={`wrapper ${color} ${$$props.class || ''}`}>
+<div {...$$props} class={`wrapper ${color} ${$$props.class || ''}`} class:padded>
 	<div style:margin="auto" style:max-width={`${maxWidth}px`}>
 		<slot />
 	</div>
@@ -11,11 +12,14 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.padded {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 4rem;
+		padding-bottom: 5rem;
+	}
 	.wrapper {
-		padding-left: calc(70px + 4rem);
-		padding-right: calc(70px + 4rem);
-		padding-top: 8rem;
-		padding-bottom: 7rem;
+		overflow: hidden;
 		&.silver {
 			@include m.linear-gradient-silver-reverse;
 		}
@@ -29,6 +33,32 @@
 		}
 		&.subtle {
 			background-color: var(--color-bg-subtle);
+		}
+	}
+
+	@include m.sm {
+		.padded {
+			padding-left: 3rem;
+			padding-right: 3rem;
+			padding-top: 5rem;
+			padding-bottom: 6rem;
+		}
+	}
+	@include m.md {
+		.padded {
+			padding-left: 5rem;
+			padding-right: 5rem;
+			padding-top: 7rem;
+			padding-bottom: 8rem;
+		}
+	}
+
+	@include m.lg {
+		.padded {
+			padding-left: calc(70px + 4rem);
+			padding-right: calc(70px + 4rem);
+			padding-top: 8rem;
+			padding-bottom: 7rem;
 		}
 	}
 </style>

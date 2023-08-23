@@ -4,7 +4,7 @@
 	export let contrast = false;
 	const handleSectionScroll = (e: MouseEvent) => {
 		e.preventDefault();
-		const section = document.getElementById(href.slice(1));
+		const section = document.getElementById(href.slice(2));
 		if (section) {
 			section.scrollIntoView({ behavior: 'smooth' });
 		}
@@ -15,7 +15,9 @@
 	<span class="inner-wrapper">
 		<a
 			class="link"
-			on:click={href.startsWith('#') ? handleSectionScroll : undefined}
+			on:click={window.location.pathname === '/' && href.includes('#')
+				? handleSectionScroll
+				: undefined}
 			target={isExternal ? '_blank' : undefined}
 			{href}><slot /></a
 		>

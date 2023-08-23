@@ -16,30 +16,23 @@
 <header>
 	<IntersectionObserver let:isIntersecting once>
 		{#if isIntersecting}
-			<div class="header" transition:blur={transitionOptions}>
-				<div class="content-container">
-					<Typography size="lg" class="ingress" color="contrast">
-						No-nonsense fullstack web development
-					</Typography>
-					<Typography class="heading" variant="h1" size="xxxl" color="contrast">
+			<div
+				style:visibility={isIntersecting ? 'initial' : 'hidden'}
+				class="content-wrapper"
+				transition:blur={transitionOptions}
+			>
+				<div class="text-container">
+					<Typography styled="ingress" size="lg" color="contrast"
+						>No-nonsense fullstack web development</Typography
+					>
+					<Typography noMargin variant="h1" size="xxxl" color="contrast">
 						Specialised in building safe, scalable, reliable & user friendly applications for the
 						web.
 					</Typography>
 				</div>
-				<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
-			</div>
-		{:else}
-			<div class="header" style:visibility="hidden">
-				<div class="content-container">
-					<Typography size="lg" class="ingress" color="contrast">
-						No-nonsense fullstack web development
-					</Typography>
-					<Typography class="heading" variant="h1" size="xxxl" color="contrast">
-						Specialised in building safe, scalable, reliable & user friendly applications for the
-						web.
-					</Typography>
+				<div class="image-container">
+					<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
 				</div>
-				<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
 			</div>
 		{/if}
 	</IntersectionObserver>
@@ -48,43 +41,49 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	header {
-		height: calc(100vh + 3rem);
+		min-height: calc(100vh + 3rem);
+		height: 100%;
 		margin-bottom: -3rem;
 		padding-bottom: 3rem;
 		@include m.linear-gradient-black-dark;
 	}
-	:global(.ingress) {
-		text-transform: uppercase;
-		opacity: 0.4;
-		letter-spacing: 2px;
-	}
-	:global(.heading) {
-		margin-top: 1rem;
-		line-height: 1.2;
-	}
-	:global(.header) {
+
+	.content-wrapper {
 		@include m.padded;
 		height: 100%;
-		gap: 4rem;
+		padding-top: 2rem;
+		gap: 2rem;
+		flex-direction: column;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-evenly;
 	}
 
-	img {
-		position: relative;
-		width: 350px;
-		top: 40px;
+	.image-container {
+		width: 100%;
 		display: block;
-		// z-index: 1;
 	}
 
-	.content-container {
-		max-width: 640px;
+	img {
+		width: 100%;
+		height: auto;
+		max-width: 320px;
+		max-height: 452px;
+	}
+
+	.text-container {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 10px;
-		margin-bottom: 6rem;
+		gap: 1.5rem;
+	}
+
+	@include m.md {
+		.content-wrapper {
+			flex-direction: row;
+		}
+		.text-container {
+			max-width: 640px;
+		}
 	}
 </style>

@@ -1,4 +1,5 @@
 <script>
+	import Link from '../Link/Link.svelte';
 	import Typography from '../Typography/Typography.svelte';
 </script>
 
@@ -17,9 +18,11 @@
 				and the way it is delivered while ensuring everybody is on the same page.
 			</Typography>
 			<div class="contact-details">
-				<span>Stockholm, Sweden</span>
-				<a class="contrast" href="tel:+46729000451">(+46) 729-00 04 51</a>
-				<a class="contrast" href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</a>
+				<Typography class="location" color="contrast" weight="500" size="sm"
+					>Stockholm, Sweden</Typography
+				>
+				<Link href="tel:+46729000451">(+46) 729-00 04 51</Link>
+				<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
 			</div>
 		</div>
 	</div>
@@ -27,8 +30,10 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
-	.contrast {
-		color: var(--color-text-contrast);
+
+	:global(.location) {
+		position: relative;
+		bottom: 2px;
 	}
 
 	.contact-details {
@@ -36,13 +41,6 @@
 		gap: 1rem;
 		font-size: 0.9rem;
 		margin-top: 1.5rem;
-		& > * {
-			opacity: 0.6;
-			transition: opacity 0.2s ease-in-out;
-		}
-		& > a:hover {
-			opacity: 1;
-		}
 	}
 
 	header {

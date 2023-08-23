@@ -3,24 +3,28 @@
 	import ThemeSwitch from '../ThemeSwitch.svelte';
 
 	const menuItems = [
-		{ label: 'Experience', href: '#knowledge' },
-		{ label: 'About', href: '#about' },
-		{ label: 'Contact', href: '#contact' },
+		{ label: 'Experience', href: '/#knowledge' },
+		{ label: 'Contact', href: '/#contact' },
+		{ label: 'About', href: '/#about' },
 		{ label: 'Resume', href: '/resume' }
 	];
 </script>
 
 <nav>
-	<p
+	<a
 		class="logo"
 		role="button"
 		tabindex={0}
-		on:click={() => {
-			document.getElementById('top')?.scrollIntoView({ behavior: 'smooth' });
-		}}
+		href="/"
+		on:click={window.location.pathname === '/'
+			? (e) => {
+					e.preventDefault();
+					document.getElementById('top')?.scrollIntoView({ behavior: 'smooth' });
+			  }
+			: undefined}
 	>
 		M
-	</p>
+	</a>
 	<div class="link-container">
 		{#each menuItems as item}
 			<NavLink contrast href={item.href}>{item.label}</NavLink>
@@ -35,10 +39,12 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
 	.logo {
 		position: relative;
 		font-size: 72px;
 		line-height: 72px;
+		color: var(--color-text-contrast);
 		font-family: var(--font-secondary);
 		cursor: pointer;
 	}
@@ -46,7 +52,7 @@
 	nav {
 		@include m.padded;
 		padding-top: 2rem;
-		display: flex;
+		display: none;
 		justify-content: space-between;
 		align-items: center;
 		color: var(--color-text-contrast);
@@ -56,5 +62,11 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
+	}
+
+	@include m.md {
+		nav {
+			display: flex;
+		}
 	}
 </style>

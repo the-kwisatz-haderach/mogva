@@ -26,14 +26,10 @@
 				{#each blocks as block, index}
 					{#if isIntersecting}
 						<div
+							style:visibility={isIntersecting ? 'initial' : 'hidden'}
 							class="service"
 							transition:fade={{ duration: 1000, delay: 500 + index * 500, easing: sineInOut }}
 						>
-							<img src={block.imgSrc} alt={block.label} />
-							<Typography color="contrast" weight="600">{block.label}</Typography>
-						</div>
-					{:else}
-						<div class="service" style:visibility="hidden">
 							<img src={block.imgSrc} alt={block.label} />
 							<Typography color="contrast" weight="600">{block.label}</Typography>
 						</div>
@@ -47,8 +43,8 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	img {
-		width: 100px;
-		height: 100px;
+		width: 40px;
+		height: 40px;
 		filter: grayscale(1) invert(1) brightness(1.1);
 	}
 
@@ -57,22 +53,60 @@
 		@include m.rounded-md;
 		@include m.shadow-sm;
 		border: 1px solid rgba(255, 255, 255, 0.2);
-		padding: 3rem 2rem;
+		padding: 1.5rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.5rem;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.content-wrapper {
-		text-align: center;
 	}
 
 	.flex {
 		margin-top: 2rem;
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	@include m.sm {
+		.service {
+			padding: 2rem;
+			gap: 1rem;
+		}
+
+		img {
+			width: 70px;
+			height: 70px;
+		}
+	}
+	@include m.md {
+		.flex {
+			gap: 1rem;
+		}
+
+		.content-wrapper {
+			text-align: center;
+		}
+
+		.service {
+			padding: 3rem 2rem;
+			gap: 1rem;
+		}
+
+		img {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	@include m.lg {
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		.flex {
+			gap: 2rem;
+		}
 	}
 </style>

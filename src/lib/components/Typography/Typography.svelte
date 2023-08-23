@@ -19,12 +19,15 @@
 	export let variant: Variant = 'p';
 	export let color: Color = 'regular';
 	export let size: Size = defaultSize[variant];
+	export let styled: 'default' | 'ingress' = 'default';
 	export let weight: Weight | undefined = undefined;
+	export let noMargin = false;
 </script>
 
 <svelte:element
 	this={variant}
-	class="{size} {$$props.class}"
+	class="{size} {$$props.class} {styled}"
+	class:noMargin
 	style:color={colorMap[color]}
 	style:font-weight={weight}
 >
@@ -32,6 +35,7 @@
 </svelte:element>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	p:not(:last-of-type) {
 		margin-bottom: 1rem;
 	}
@@ -40,25 +44,62 @@
 		line-height: 1.5;
 	}
 
+	.ingress {
+		text-transform: uppercase;
+		opacity: 0.4;
+		letter-spacing: 2px;
+	}
+
 	.xs {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 	}
 	.sm {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 	.md {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	.lg {
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	.xl {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
+		line-height: 1.2;
 	}
 	.xxl {
-		font-size: 2rem;
+		font-size: 1.6rem;
+		line-height: 1.2;
 	}
 	.xxxl {
-		font-size: 3rem;
+		font-size: 1.8rem;
+		line-height: 1.2;
+	}
+
+	.noMargin {
+		margin: 0;
+	}
+
+	@include m.md {
+		.xs {
+			font-size: 0.8rem;
+		}
+		.sm {
+			font-size: 0.9rem;
+		}
+		.md {
+			font-size: 1rem;
+		}
+		.lg {
+			font-size: 1.2rem;
+		}
+		.xl {
+			font-size: 1.5rem;
+		}
+		.xxl {
+			font-size: 2rem;
+		}
+		.xxxl {
+			font-size: 3rem;
+		}
 	}
 </style>

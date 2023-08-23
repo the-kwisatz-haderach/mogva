@@ -59,7 +59,7 @@
 					{/each}
 				</div>
 			{:else}
-				<div class="options-container">
+				<div class="options-container" style:visibility="hidden">
 					{#each links as link}
 						<a href={link.href} class="link-block" target="_blank">
 							<div class="icon-wrapper">
@@ -79,6 +79,7 @@
 	.content-wrapper {
 		display: flex;
 		align-items: flex-end;
+		flex-wrap: wrap;
 		gap: 3rem;
 	}
 
@@ -89,6 +90,7 @@
 	.options-container {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		align-items: flex-end;
 		gap: 1rem;
 	}

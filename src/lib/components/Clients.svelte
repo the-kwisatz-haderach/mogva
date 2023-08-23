@@ -33,11 +33,10 @@
 			<ul>
 				{#each images as image, index}
 					{#if isIntersecting}
-						<li transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}>
-							<img src={image.src} alt={image.alt} />
-						</li>
-					{:else}
-						<li style:visibility="hidden">
+						<li
+							style:visibility={isIntersecting ? 'initial' : 'hidden'}
+							transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}
+						>
 							<img src={image.src} alt={image.alt} />
 						</li>
 					{/if}

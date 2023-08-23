@@ -24,17 +24,14 @@
 				{#each skills as skill, i (skill)}
 					{#if isIntersecting}
 						<li
+							style:visibility={isIntersecting ? 'initial' : 'hidden'}
 							in:fly|global={{
 								y: 200,
 								x: (i % 2 === 0 ? 1 : -1) * 400,
-								duration: 300,
+								duration: 500,
 								delay: 2000 + i * 100
 							}}
 						>
-							<Tag color="contrast">{skill}</Tag>
-						</li>
-					{:else}
-						<li style:visibility="hidden">
 							<Tag color="contrast">{skill}</Tag>
 						</li>
 					{/if}

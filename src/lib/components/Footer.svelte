@@ -63,17 +63,17 @@
 	}
 	footer {
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		@include m.padded;
 		@include m.linear-gradient-black-dark-reverse;
 		display: flex;
 		width: 100%;
 		padding-top: 8rem;
 		padding-bottom: 2rem;
-		padding-left: 50px;
-		padding-right: 50px;
 	}
 
 	.footer-main {
 		flex: 1;
+		flex-wrap: wrap;
 		display: flex;
 		gap: 4rem;
 		justify-content: space-evenly;
@@ -88,5 +88,8 @@
 		footer {
 			display: none;
 		}
+	}
+
+	@include m.md {
 	}
 </style>

@@ -68,8 +68,16 @@
 }
 
 @mixin padded {
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	@include sm {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	@include lg {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
 }
 
 @mixin rounded-sm {
