@@ -38,7 +38,7 @@
 	}
 
 	.top {
-		top: -25vw;
+		top: -12vw;
 		bottom: 0;
 		&::before {
 			content: '';
@@ -47,8 +47,8 @@
 			width: 200%;
 			height: 100%;
 			position: absolute;
-			border-top: 1px solid rgba(255, 255, 255, 0.2);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			// border-top: 1px solid rgba(255, 255, 255, 0.2);
+			// border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 			background-color: var(--color-bg-paper);
 			transform: rotate(-3deg);
 		}
@@ -88,6 +88,11 @@
 		}
 	}
 
+	@include m.md {
+		.top {
+			top: -16vw;
+		}
+	}
 	@include m.lg {
 		.top {
 			top: -10vw;

@@ -28,7 +28,7 @@
 		@include m.rounded-sm;
 		color: var(--color-text-contrast);
 		font-weight: 500;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		width: fit-content;
 		position: relative;
 		padding: 12px 20px;
@@ -49,7 +49,7 @@
 
 	.root.black {
 		@include m.linear-gradient-black-dark;
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		//border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	.root::after {
@@ -98,6 +98,12 @@
 		}
 		to {
 			transform: translateX(4px) scale(1.4);
+		}
+	}
+
+	@include m.lg {
+		.root {
+			font-size: 1.2rem;
 		}
 	}
 </style>

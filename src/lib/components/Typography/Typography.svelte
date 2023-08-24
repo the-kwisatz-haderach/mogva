@@ -22,12 +22,14 @@
 	export let styled: 'default' | 'ingress' = 'default';
 	export let weight: Weight | undefined = undefined;
 	export let noMargin = false;
+	export let narrow = false;
 </script>
 
 <svelte:element
 	this={variant}
 	class="{size} {$$props.class} {styled}"
 	class:noMargin
+	class:narrow
 	style:color={colorMap[color]}
 	style:font-weight={weight}
 >
@@ -36,6 +38,11 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
+	.narrow {
+		max-width: 800px;
+		margin: auto;
+	}
 	p:not(:last-of-type) {
 		margin-bottom: 1rem;
 	}
@@ -80,6 +87,29 @@
 	}
 
 	@include m.md {
+		.xs {
+			font-size: 0.8rem;
+		}
+		.sm {
+			font-size: 0.9rem;
+		}
+		.md {
+			font-size: 1rem;
+		}
+		.lg {
+			font-size: 1.1rem;
+		}
+		.xl {
+			font-size: 1.4rem;
+		}
+		.xxl {
+			font-size: 1.8rem;
+		}
+		.xxxl {
+			font-size: 2rem;
+		}
+	}
+	@include m.lg {
 		.xs {
 			font-size: 0.8rem;
 		}

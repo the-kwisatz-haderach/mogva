@@ -8,9 +8,11 @@
 </a>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	a {
 		position: relative;
 		font-weight: 500;
+		font-size: 0.9rem;
 		color: var(--color-text-contrast);
 		&::before {
 			content: '';
@@ -26,6 +28,11 @@
 		}
 		&:hover::before {
 			transform: scaleX(1);
+		}
+	}
+	@include m.md {
+		a {
+			font-size: 1rem;
 		}
 	}
 </style>

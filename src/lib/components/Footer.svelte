@@ -67,7 +67,7 @@
 		@include m.linear-gradient-black-dark-reverse;
 		display: flex;
 		width: 100%;
-		padding-top: 8rem;
+		padding-top: 5rem;
 		padding-bottom: 2rem;
 	}
 
@@ -75,13 +75,13 @@
 		flex: 1;
 		flex-wrap: wrap;
 		display: flex;
-		gap: 4rem;
-		justify-content: space-evenly;
+		gap: 3rem;
 	}
 
 	.footer-bottom {
 		width: 100%;
 		margin-top: 5rem;
+		text-align: center;
 	}
 
 	@media print {
@@ -91,5 +91,16 @@
 	}
 
 	@include m.md {
+		.footer-main {
+			gap: 4rem;
+			justify-content: space-evenly;
+		}
+		.footer-bottom {
+			margin-top: 5rem;
+			text-align: left;
+		}
+		footer {
+			padding-top: 8rem;
+		}
 	}
 </style>

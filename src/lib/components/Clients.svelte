@@ -11,8 +11,8 @@
 	import Container from './Container/Container.svelte';
 
 	const images: Array<{ src: string; alt: string }> = [
-		{ src: ikeaLogo, alt: 'IKEA logo' },
 		{ src: qlikLogo, alt: 'Qlik logo' },
+		{ src: ikeaLogo, alt: 'IKEA logo' },
 		{ src: electroluxLogo, alt: 'Electrolux logo' },
 		{ src: heliospectraLogo, alt: 'Heliospectra logo' },
 		{ src: systeconLogo, alt: 'Systecon logo' }
@@ -22,26 +22,26 @@
 <Container>
 	<div class="main">
 		<Typography color="contrast" variant="h2">Past assignments</Typography>
-		<Typography color="contrast"
+		<Typography narrow color="contrast"
 			>I've had the privilege to work with a lot of different companies over the years. These are
 			some of the more recent ones.</Typography
 		>
 		<span class="cta">
 			<Button color="black" href="/resume">View resume</Button>
 		</span>
-		<IntersectionObserver top={-250} let:isIntersecting once>
-			<ul>
-				{#each images as image, index}
-					{#if isIntersecting}
+		<IntersectionObserver let:isIntersecting once>
+			{#if isIntersecting}
+				<ul>
+					{#each images as image, index}
 						<li
 							style:visibility={isIntersecting ? 'initial' : 'hidden'}
 							transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}
 						>
 							<img src={image.src} alt={image.alt} />
 						</li>
-					{/if}
-				{/each}
-			</ul>
+					{/each}
+				</ul>
+			{/if}
 		</IntersectionObserver>
 	</div>
 </Container>
@@ -58,21 +58,20 @@
 	}
 
 	ul {
-		padding: 0 2rem;
 		display: flex;
-		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: 4rem;
-		margin-bottom: 4rem;
-		margin-top: 4rem;
-		max-width: 1200px;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		margin-top: 2rem;
 		filter: saturate(0) invert(1) brightness(0.8);
 		transition: filter 0.3s ease-in-out;
 	}
 
 	.cta {
 		order: 1;
+		align-self: center;
 	}
 	:global(.cta:hover + * > ul) {
 		filter: saturate(0) invert(1) brightness(1.5);
@@ -80,21 +79,50 @@
 
 	.main {
 		position: relative;
-		text-align: center;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 	}
 
 	li {
 		flex-basis: 20%;
-		height: 4rem;
-		max-height: 60px;
+		height: 1.5rem;
+		max-height: 20px;
 	}
 
 	li > img {
 		width: inherit;
 		height: inherit;
 		object-fit: contain;
+	}
+
+	@include m.md {
+		.main {
+			text-align: center;
+		}
+		ul {
+			gap: 3rem;
+			margin-bottom: 4rem;
+			margin-top: 4rem;
+		}
+		li {
+			flex-basis: 20%;
+			height: 3rem;
+			max-height: 60px;
+		}
+	}
+	@include m.lg {
+		.main {
+			text-align: center;
+		}
+		ul {
+			gap: 3rem;
+			margin-bottom: 4rem;
+			margin-top: 4rem;
+		}
+		li {
+			flex-basis: 20%;
+			height: 4rem;
+			max-height: 60px;
+		}
 	}
 </style>

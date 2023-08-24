@@ -52,7 +52,7 @@
 		@include m.linear-gradient-black-dark;
 		@include m.rounded-md;
 		@include m.shadow-sm;
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		//border: 1px solid rgba(255, 255, 255, 0.2);
 		padding: 1.5rem;
 		flex: 1;
 		display: flex;

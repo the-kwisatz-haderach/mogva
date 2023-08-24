@@ -22,7 +22,12 @@
 			</Typography>
 		</div>
 		<div class="image-wrapper">
-			<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
+			<img
+				width="100%"
+				height="100%"
+				src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png"
+				alt=""
+			/>
 		</div>
 	</div>
 </Container>
@@ -31,22 +36,41 @@
 	@use '$styles/mixins' as m;
 	.content-wrapper {
 		display: flex;
-		justify-content: space-between;
-		gap: 2rem;
-		margin-bottom: -7rem;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: -5rem;
 	}
 
 	.image-wrapper {
 		position: relative;
 		bottom: -1rem;
-		width: 320px;
-		height: 400px;
+		width: 192px;
+		aspect-ratio: 240 / 192;
 	}
 
 	.text-wrapper {
 		flex: 1;
-		padding-top: 1rem;
-		position: relative;
-		bottom: 1rem;
+	}
+
+	@include m.sm {
+		.content-wrapper {
+			margin-bottom: -6rem;
+		}
+	}
+	@include m.md {
+		.text-wrapper {
+			padding-bottom: 7rem;
+		}
+		.image-wrapper {
+			position: relative;
+			bottom: -5rem;
+			width: 33%;
+		}
+		.content-wrapper {
+			gap: 2rem;
+			justify-content: space-between;
+			flex-direction: row;
+			margin-bottom: -8rem;
+		}
 	}
 </style>

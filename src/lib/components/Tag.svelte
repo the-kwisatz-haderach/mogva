@@ -26,15 +26,32 @@
 		}
 		&.sm {
 			padding: 2px 8px;
-			font-size: 0.8rem;
+			font-size: 0.7rem;
 		}
 		&.md {
 			padding: 5px 14px;
-			font-size: 1rem;
+			font-size: 0.8rem;
 		}
 		&.lg {
 			padding: 0.5rem 1rem;
-			font-size: 1.4rem;
+			font-size: 1.1rem;
+		}
+	}
+
+	@include m.md {
+		.tag {
+			&.sm {
+				padding: 2px 8px;
+				font-size: 0.8rem;
+			}
+			&.md {
+				padding: 5px 14px;
+				font-size: 1rem;
+			}
+			&.lg {
+				padding: 0.5rem 1rem;
+				font-size: 1.4rem;
+			}
 		}
 	}
 </style>

@@ -10,16 +10,17 @@
 	const skills = [...experienceTags.keys()];
 </script>
 
-<!-- <Container style="margin-top: -8rem;"> -->
 <Container>
 	<div class="content-wrapper">
-		<Typography variant="h2" color="contrast">Toolset</Typography>
-		<IntersectionObserver let:isIntersecting once>
-			<Typography color="contrast">
+		<div>
+			<Typography variant="h2" color="contrast">Toolset</Typography>
+			<Typography narrow color="contrast">
 				With more than 8 years in the industry, I've picked up a wide range of skills to leverage in
 				the different stages of development. Be it designing, developing, testing, deploying or
 				analysing & optimising software.
 			</Typography>
+		</div>
+		<IntersectionObserver let:isIntersecting once>
 			<ul>
 				{#each skills as skill, i (skill)}
 					{#if isIntersecting}
@@ -45,11 +46,16 @@
 <style lang="scss">
 	@use '$styles/mixins' as m;
 	ul {
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
 		display: inline-flex;
 		gap: 8px 4px;
 		margin-top: 2rem;
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		flex-wrap: wrap;
+		max-height: 260px;
+		overflow: hidden;
 		justify-content: center;
 	}
 
@@ -59,9 +65,18 @@
 
 	.content-wrapper {
 		position: relative;
-		text-align: center;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	@include m.md {
+		ul {
+			max-height: unset;
+			overflow: unset;
+		}
+		.content-wrapper {
+			text-align: center;
+		}
 	}
 </style>

@@ -32,7 +32,7 @@
 	];
 </script>
 
-<Container id="contact" color="silver" maxWidth={800}>
+<Container id="contact" color="silver" maxWidth={1000}>
 	<IntersectionObserver let:isIntersecting once>
 		<div class="content-wrapper">
 			<div class="text-container">
@@ -183,9 +183,16 @@
 		}
 		.options-container {
 			gap: 1rem;
+			position: relative;
+			top: 0.5rem;
 		}
 		.icon-wrapper {
 			padding: 1.5rem;
+		}
+	}
+	@include m.xl {
+		.content-wrapper {
+			gap: 4rem;
 		}
 	}
 </style>
