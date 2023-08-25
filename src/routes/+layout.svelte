@@ -3,6 +3,8 @@
 	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 	import { theme } from '$lib/stores/theme';
 	import '$styles/app.scss';
+	export const prerender = true;
+	export const trailingSlash = 'always';
 </script>
 
 <svelte:head>
