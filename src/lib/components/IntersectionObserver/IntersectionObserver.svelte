@@ -39,4 +39,8 @@
 </div>
 
 <style>
+	div {
+		width: inherit;
+		height: inherit;
+	}
 </style>

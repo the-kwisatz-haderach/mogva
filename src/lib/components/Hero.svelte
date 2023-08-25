@@ -63,6 +63,7 @@
 	}
 
 	.content-wrapper {
+		z-index: 10;
 		gap: 2rem;
 		flex-direction: column;
 		display: flex;
