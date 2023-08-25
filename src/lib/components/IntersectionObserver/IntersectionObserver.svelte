@@ -18,18 +18,19 @@
 			(entries) => {
 				isIntersecting = entries[0].isIntersecting;
 				if (isIntersecting && once) {
-					observer.unobserve(container);
+					observer.disconnect();
 				}
 			},
 			{
 				rootMargin,
-				threshold
+				threshold,
+				root: document.body
 			}
 		);
 
 		observer.observe(container);
 		return () => {
-			observer.unobserve(container);
+			observer.disconnect();
 		};
 	});
 </script>
