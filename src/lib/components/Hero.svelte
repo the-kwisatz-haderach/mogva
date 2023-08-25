@@ -16,9 +16,13 @@
 
 <header>
 	<Container>
-		<IntersectionObserver threshold={[0.5, 1]} let:isIntersecting once>
+		<IntersectionObserver let:isIntersecting once>
 			{#if isIntersecting}
-				<div class="content-wrapper" transition:blur={transitionOptions}>
+				<div
+					class="content-wrapper"
+					style:visibility={isIntersecting ? 'initial' : 'hidden'}
+					transition:blur={transitionOptions}
+				>
 					<div class="text-container">
 						<Typography styled="ingress" size="lg" color="contrast"
 							>No-nonsense fullstack web development</Typography
