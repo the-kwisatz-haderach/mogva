@@ -23,8 +23,7 @@
 			},
 			{
 				rootMargin,
-				threshold,
-				root: document.body
+				threshold
 			}
 		);
 
@@ -41,7 +40,7 @@
 
 <style>
 	div {
-		width: inherit;
-		height: inherit;
+		width: fit-content;
+		height: fit-content;
 	}
 </style>

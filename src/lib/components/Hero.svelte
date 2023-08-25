@@ -33,7 +33,7 @@
 				</div> -->
 				</div>
 			{:else}
-				<div style:opacity={0} class="content-wrapper" transition:blur={transitionOptions}>
+				<div style:opacity={0.2} class="content-wrapper">
 					<div class="text-container">
 						<Typography styled="ingress" size="lg" color="contrast"
 							>No-nonsense fullstack web development</Typography
