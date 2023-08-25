@@ -18,12 +18,12 @@
 	<Container>
 		<IntersectionObserver let:isIntersecting once>
 			{#if isIntersecting}
-				<div
-					class="content-wrapper"
-					style:visibility={isIntersecting ? 'initial' : 'hidden'}
-					transition:blur={transitionOptions}
-				>
-					<div class="text-container">
+				<div class="content-wrapper">
+					<div
+						class="text-container"
+						transition:blur={transitionOptions}
+						style:visibility={isIntersecting ? 'initial' : 'hidden'}
+					>
 						<Typography styled="ingress" size="lg" color="contrast"
 							>No-nonsense fullstack web development</Typography
 						>
