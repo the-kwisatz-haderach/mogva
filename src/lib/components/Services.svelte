@@ -3,6 +3,7 @@
 	import frontendImg from '$lib/assets/images/coding.png';
 	import backendImg from '$lib/assets/images/database-storage.png';
 	import cloudImg from '$lib/assets/images/cloud-hosting.png';
+	import testingImg from '$lib/assets/images/testing.png';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import { fade } from 'svelte/transition';
 	import { sineInOut } from 'svelte/easing';
@@ -11,7 +12,8 @@
 	const blocks = [
 		{ label: 'Frontend', imgSrc: frontendImg },
 		{ label: 'Backend', imgSrc: backendImg },
-		{ label: 'Cloud', imgSrc: cloudImg }
+		{ label: 'Cloud', imgSrc: cloudImg },
+		{ label: 'Testing', imgSrc: testingImg }
 	];
 </script>
 
@@ -81,10 +83,6 @@
 		}
 	}
 	@include m.md {
-		.flex {
-			gap: 1rem;
-		}
-
 		.content-wrapper {
 			text-align: center;
 		}
@@ -99,9 +97,6 @@
 		img {
 			width: 100px;
 			height: 100px;
-		}
-		.flex {
-			gap: 2rem;
 		}
 	}
 </style>

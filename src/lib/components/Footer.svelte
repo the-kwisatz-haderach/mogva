@@ -40,6 +40,11 @@
 		</div>
 		<div class="footer-bottom">
 			<Typography color="contrast" size="xs">© {currentYear} Mogva AB</Typography>
+			<a
+				href="https://www.flaticon.com/free-icons/software-development"
+				title="software development icons"
+				>Software development icons created by Freepik - Flaticon</a
+			>
 		</div>
 	</div>
 </footer>
