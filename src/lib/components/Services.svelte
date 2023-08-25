@@ -5,9 +5,12 @@
 	import cloudImg from '$lib/assets/images/cloud-hosting.png';
 	import testingImg from '$lib/assets/images/testing.png';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { sineInOut } from 'svelte/easing';
 	import Container from './Container/Container.svelte';
+	import Tag from './Tag.svelte';
+	import { experienceTags } from './Resume/experiences';
+	import Button from './Button/Button.svelte';
 
 	const blocks = [
 		{ label: 'Frontend', imgSrc: frontendImg },
@@ -15,15 +18,18 @@
 		{ label: 'Cloud', imgSrc: cloudImg },
 		{ label: 'Testing', imgSrc: testingImg }
 	];
+
+	const skills = [...experienceTags.keys()];
 </script>
 
 <Container id="knowledge">
 	<div class="content-wrapper">
-		<Typography color="contrast" variant="h2">Knowledge domains</Typography>
+		<Typography color="contrast" variant="h2">Expertise</Typography>
 		<Typography color="contrast"
-			>I'm profficient in the big pillars of modern web application development.</Typography
+			>I always look for ways to improve my knowledge. This means not shying away from a challenge
+			but rather embracing the unknown and picking up new skills along the way.</Typography
 		>
-		<IntersectionObserver let:isIntersecting once>
+		<IntersectionObserver let:isIntersecting once style="margin-bottom: 3rem;">
 			<div class="flex">
 				{#each blocks as block, index}
 					{#if isIntersecting}
@@ -38,12 +44,49 @@
 					{/if}
 				{/each}
 			</div>
+			<ul>
+				{#each skills as skill, i (skill)}
+					{#if isIntersecting}
+						<li
+							style:visibility={isIntersecting ? 'initial' : 'hidden'}
+							in:fly|global={{
+								y: 200,
+								x: (i % 2 === 0 ? 1 : -1) * 400,
+								duration: 500,
+								delay: 3000 + i * 100
+							}}
+						>
+							<Tag color="contrast">{skill}</Tag>
+						</li>
+					{/if}
+				{/each}
+			</ul>
 		</IntersectionObserver>
+		<Button href="/resume" style="align-self: center;" color="black">View qualifications</Button>
 	</div>
 </Container>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	ul {
+		display: none;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		gap: 8px 4px;
+		margin-top: 2rem;
+		flex-wrap: wrap;
+		overflow: hidden;
+		justify-content: center;
+	}
+
+	li {
+		margin-bottom: 0;
+	}
 	img {
 		width: 40px;
 		height: 40px;
@@ -65,7 +108,7 @@
 	}
 
 	.flex {
-		margin-top: 2rem;
+		margin-top: 3rem;
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
@@ -83,6 +126,11 @@
 		}
 	}
 	@include m.md {
+		ul {
+			display: inline-flex;
+			max-height: unset;
+			overflow: unset;
+		}
 		.content-wrapper {
 			text-align: center;
 		}

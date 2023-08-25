@@ -48,7 +48,6 @@
 			<AngledSection withTop>
 				<Services />
 				<Contact />
-				<Skills />
 				<About />
 				<Clients />
 			</AngledSection>

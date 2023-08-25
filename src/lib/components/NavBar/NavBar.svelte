@@ -3,7 +3,7 @@
 	import ThemeSwitch from '../ThemeSwitch.svelte';
 
 	const menuItems = [
-		{ label: 'Experience', href: '/#knowledge' },
+		{ label: 'Expertise', href: '/#knowledge' },
 		{ label: 'Contact', href: '/#contact' },
 		{ label: 'About', href: '/#about' },
 		{ label: 'Resume', href: '/resume' }
