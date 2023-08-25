@@ -21,8 +21,8 @@
 				<Typography class="location" color="contrast" weight="500" size="sm"
 					>Stockholm, Sweden</Typography
 				>
-				<Link href="tel:+46729000451">(+46) 729-00 04 51</Link>
-				<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
+				<Link invertHover href="tel:+46729000451">(+46) 729-00 04 51</Link>
+				<Link invertHover href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
 			</div>
 		</div>
 	</div>

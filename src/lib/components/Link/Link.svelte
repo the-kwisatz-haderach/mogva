@@ -1,14 +1,24 @@
 <script lang="ts">
+	import ExternalLink from '$lib/assets/icons/ExternalLink.svelte';
+
 	export let href = '';
 	export let external = false;
+	export let invertHover = false;
 </script>
 
-<a {href} target={external ? '_blank' : undefined}>
+<a {href} target={external ? '_blank' : undefined} class:invertHover>
+	{#if external}<ExternalLink class="external" />{/if}
 	<slot />
 </a>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	:global(.external) {
+		width: 1rem;
+		height: 1rem;
+		fill: white;
+		display: inline;
+	}
 	a {
 		position: relative;
 		font-weight: 500;
@@ -18,18 +28,28 @@
 			content: '';
 			width: 100%;
 			position: absolute;
-			transform: scaleX(0);
+			transform: scaleX(1);
 			height: 1px;
 			left: 0;
 			bottom: -2px;
 			background-color: var(--color-text-contrast);
 			transition: transform 0.3s ease-in-out;
-			transform-origin: left;
+			transform-origin: right;
 		}
+		&:hover::before {
+			transform: scaleX(0);
+		}
+	}
+
+	a.invertHover {
 		&:hover::before {
 			transform: scaleX(1);
 		}
+		&::before {
+			transform: scaleX(0);
+		}
 	}
+
 	@include m.md {
 		a {
 			font-size: 1rem;
