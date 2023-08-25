@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"intersection-observer-polyfill": "^0.1.0",
 		"lodash.throttle": "^4.1.1",
 		"normalize.css": "^8.0.1"
 	}

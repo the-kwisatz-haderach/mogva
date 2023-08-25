@@ -1,4 +1,5 @@
 <script>
+	import 'intersection-observer-polyfill';
 	import Footer from '$lib/components/Footer.svelte';
 	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 	import { theme } from '$lib/stores/theme';
