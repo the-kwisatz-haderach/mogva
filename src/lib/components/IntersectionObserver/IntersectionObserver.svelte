@@ -1,5 +1,4 @@
 <script lang="ts">
-	import IntersectionObserver from 'intersection-observer-polyfill';
 	import { onMount } from 'svelte';
 
 	export let once = false;
