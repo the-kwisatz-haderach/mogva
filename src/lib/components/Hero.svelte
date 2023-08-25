@@ -16,7 +16,7 @@
 
 <header>
 	<Container>
-		<IntersectionObserver let:isIntersecting once>
+		<IntersectionObserver threshold={[0.5, 1]} let:isIntersecting once>
 			{#if isIntersecting}
 				<div class="content-wrapper" transition:blur={transitionOptions}>
 					<div class="text-container">
@@ -31,18 +31,6 @@
 					<!-- <div class="image-container">
 					<img src="https://www.freeiconspng.com/thumbs/batman-png/batman-png-32.png" alt="" />
 				</div> -->
-				</div>
-			{:else}
-				<div style:opacity={0.2} class="content-wrapper">
-					<div class="text-container">
-						<Typography styled="ingress" size="lg" color="contrast"
-							>No-nonsense fullstack web development</Typography
-						>
-						<Typography noMargin variant="h1" size="xxxl" color="contrast">
-							Specialised in building safe, scalable, reliable & user friendly applications for the
-							web.
-						</Typography>
-					</div>
 				</div>
 			{/if}
 		</IntersectionObserver>

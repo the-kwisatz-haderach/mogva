@@ -40,7 +40,7 @@
 
 <style>
 	div {
-		width: fit-content;
-		height: fit-content;
+		width: auto;
+		height: auto;
 	}
 </style>
