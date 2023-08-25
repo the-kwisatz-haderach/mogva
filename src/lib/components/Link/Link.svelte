@@ -16,6 +16,9 @@
 	:global(.external) {
 		width: 1rem;
 		height: 1rem;
+		position: relative;
+		top: 1px;
+		margin-right: 4px;
 		fill: white;
 		display: inline;
 	}
@@ -28,7 +31,7 @@
 			content: '';
 			width: 100%;
 			position: absolute;
-			transform: scaleX(1);
+			transform: scaleX(0);
 			height: 1px;
 			left: 0;
 			bottom: -2px;
@@ -37,16 +40,16 @@
 			transform-origin: right;
 		}
 		&:hover::before {
-			transform: scaleX(0);
+			transform: scaleX(1);
 		}
 	}
 
 	a.invertHover {
 		&:hover::before {
-			transform: scaleX(1);
+			transform: scaleX(0);
 		}
 		&::before {
-			transform: scaleX(0);
+			transform: scaleX(1);
 		}
 	}
 

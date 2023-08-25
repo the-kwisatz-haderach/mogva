@@ -15,8 +15,8 @@
 	.padded {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
-		padding-top: 4rem;
-		padding-bottom: 5rem;
+		padding-top: 5rem;
+		padding-bottom: 6rem;
 	}
 	.wrapper {
 		overflow: hidden;
@@ -40,16 +40,16 @@
 		.padded {
 			padding-left: 3rem;
 			padding-right: 3rem;
-			padding-top: 5rem;
-			padding-bottom: 6rem;
+			padding-top: 6rem;
+			padding-bottom: 7rem;
 		}
 	}
 	@include m.md {
 		.padded {
 			padding-left: 5rem;
 			padding-right: 5rem;
-			padding-top: 7rem;
-			padding-bottom: 8rem;
+			padding-top: 8rem;
+			padding-bottom: 9rem;
 		}
 	}
 
@@ -57,8 +57,8 @@
 		.padded {
 			padding-left: calc(70px + 4rem);
 			padding-right: calc(70px + 4rem);
-			padding-top: 8rem;
-			padding-bottom: 7rem;
+			padding-top: 9rem;
+			padding-bottom: 8rem;
 		}
 	}
 </style>

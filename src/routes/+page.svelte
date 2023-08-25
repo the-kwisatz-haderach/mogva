@@ -3,17 +3,16 @@
 	import About from '$lib/components/About.svelte';
 	import AngledSection from '$lib/components/AngledSection/AngledSection.svelte';
 	import Clients from '$lib/components/Clients.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import IntersectionObserver from '$lib/components/IntersectionObserver/IntersectionObserver.svelte';
 	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 	import Services from '$lib/components/Services.svelte';
-	import Skills from '$lib/components/Skills.svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import throttle from 'lodash.throttle';
 	import Contact from '$lib/components/Contact.svelte';
+	import Intro from '$lib/components/Intro.svelte';
 
 	let show = false;
 	let prevScrollPos = 0;
@@ -38,7 +37,7 @@
 
 <div class="wrapper">
 	<Hero />
-	<IntersectionObserver top={-600} let:isIntersecting>
+	<IntersectionObserver threshold={[0]} top={-600} let:isIntersecting>
 		<div>
 			{#if isIntersecting && show}
 				<div class="sticky" transition:fade={{ duration: 200 }}>
@@ -46,8 +45,9 @@
 				</div>
 			{/if}
 			<AngledSection withTop>
-				<Services />
+				<Intro />
 				<Contact />
+				<Services />
 				<About />
 				<Clients />
 			</AngledSection>

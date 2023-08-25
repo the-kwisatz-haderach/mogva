@@ -71,11 +71,11 @@
 	}
 	.xl {
 		font-size: 1.2rem;
-		line-height: 1.2;
+		line-height: 1.4;
 	}
 	.xxl {
 		font-size: 1.6rem;
-		line-height: 1.2;
+		line-height: 1.4;
 	}
 	.xxxl {
 		font-size: 1.8rem;
