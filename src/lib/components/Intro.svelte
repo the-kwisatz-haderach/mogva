@@ -9,11 +9,9 @@
 	<IntersectionObserver let:isIntersecting once>
 		<div class="text-wrapper">
 			<Typography weight="300" size="xxl" color="contrast">
-				With over {#if isIntersecting}
-					<Counter count={8} />
-				{:else}
-					<Counter style="visibility: hidden;" count={0} />
-				{/if} years in the industry,
+				With over
+				<Counter play={isIntersecting} count={8} />
+				years in the industry,
 				<br />I've got you covered.
 			</Typography>
 		</div>
@@ -22,6 +20,7 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
 	.text-wrapper {
 		padding-top: 8rem;
 		padding-bottom: 8rem;

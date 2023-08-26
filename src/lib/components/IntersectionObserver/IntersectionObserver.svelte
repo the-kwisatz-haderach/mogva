@@ -6,7 +6,7 @@
 	export let bottom = 0;
 	export let left = 0;
 	export let right = 0;
-	export let threshold: number[] = [0.5, 1];
+	export let threshold: number[] = [0.5];
 
 	let container: Element;
 	let isIntersecting = false;

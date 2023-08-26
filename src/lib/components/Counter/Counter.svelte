@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
+	export let play = true;
 	export let count = 0;
 	export let intervalMs = 130;
 	let current = 0;
 
 	let timeout: NodeJS.Timeout;
-	$: if (current < count) {
+	$: if (play && current < count) {
 		timeout = setTimeout(() => {
 			if (current === count) {
 				clearTimeout(timeout);
@@ -19,11 +20,14 @@
 </script>
 
 {#key current}
-	<span {...$$props} in:fly={{ y: 50, duration: intervalMs }}>{current}</span>
+	<span {...$$props} class:play in:fly={{ y: 50, duration: intervalMs }}>{current}</span>
 {/key}
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	:not(.play) {
+		visibility: hidden;
+	}
 	span {
 		background-color: var(--color-primary-light);
 		font-weight: 900;
