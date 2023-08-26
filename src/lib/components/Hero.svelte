@@ -28,16 +28,9 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
-	.transition-before {
-		filter: blur(1rem);
-		transition: filter 1s 0.5s ease-in-out;
-	}
-	.transition-after {
-		filter: blur(0);
-	}
+
 	header {
-		min-height: 100vh;
-		height: 100vh;
+		height: calc(100vh - 3rem);
 		display: flex;
 		align-items: flex-end;
 		margin-bottom: -3rem;
@@ -72,6 +65,13 @@
 	}
 
 	@include m.md {
+		.transition-before {
+			filter: blur(1rem);
+			transition: filter 1s 0.5s ease-in-out;
+		}
+		.transition-after {
+			filter: blur(0);
+		}
 		header {
 			padding-top: 0;
 			min-height: calc(100vh + 3rem);
