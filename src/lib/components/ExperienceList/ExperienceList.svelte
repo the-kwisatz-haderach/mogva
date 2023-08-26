@@ -36,6 +36,9 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+	time {
+		text-transform: capitalize;
+	}
 	.tag-list {
 		display: flex;
 		flex-wrap: wrap;
