@@ -64,10 +64,10 @@
 		font-size: 0.8rem;
 	}
 	.md {
-		font-size: 0.9rem;
+		font-size: 1rem;
 	}
 	.lg {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 	.xl {
 		font-size: 1.2rem;
