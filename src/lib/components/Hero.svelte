@@ -30,7 +30,7 @@
 	@use '$styles/mixins' as m;
 
 	header {
-		height: calc(100vh - 3rem);
+		height: calc(100vh - rem);
 		display: flex;
 		align-items: flex-end;
 		margin-bottom: -3rem;
@@ -62,6 +62,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		gap: 1.5rem;
+		max-width: 500px;
 	}
 
 	@include m.md {
@@ -80,6 +81,8 @@
 			padding-top: 8rem;
 			flex-direction: row;
 		}
+	}
+	@include m.lg {
 		.text-container {
 			max-width: 750px;
 		}
