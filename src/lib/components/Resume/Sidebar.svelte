@@ -74,8 +74,8 @@
 </aside>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	aside {
-		width: 240px;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
@@ -105,6 +105,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0px 6px;
+	}
+
+	@include m.lg {
+		aside {
+			width: 240px;
+		}
 	}
 
 	@media print {

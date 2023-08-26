@@ -35,6 +35,7 @@
 </ul>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	.tag-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -43,6 +44,7 @@
 	}
 	.flex {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
 		margin-bottom: 6px;
 	}
@@ -56,7 +58,6 @@
 	}
 
 	li {
-		padding-right: 1.5rem;
 		position: relative;
 		display: flex;
 		gap: 1.5rem;
@@ -64,26 +65,6 @@
 		margin-bottom: 0;
 		& > div {
 			width: 100%;
-		}
-		$color-timeline: rgb(212, 212, 212);
-		&:not(:last-child)::before {
-			content: '';
-			position: absolute;
-			top: 3px;
-			right: 0px;
-			width: 1px;
-			height: calc(100% + 1rem);
-			background-color: $color-timeline;
-		}
-		&::after {
-			content: '';
-			position: absolute;
-			top: 3px;
-			right: -5px;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background-color: $color-timeline;
 		}
 	}
 
@@ -94,11 +75,53 @@
 
 	.experience-header {
 		width: 100%;
+		flex-wrap: wrap;
 		display: flex;
+		margin-bottom: 4px;
 		justify-content: space-between;
 	}
 
 	:global(.text:not(:last-child)) {
 		margin-bottom: 0.5rem;
+	}
+
+	@include m.sm {
+		.experience-header {
+			margin-bottom: 0;
+		}
+	}
+
+	@include m.md {
+		li {
+			padding-right: 1.5rem;
+			position: relative;
+			display: flex;
+			gap: 1.5rem;
+			padding-bottom: 2rem;
+			margin-bottom: 0;
+			& > div {
+				width: 100%;
+			}
+			$color-timeline: rgb(212, 212, 212);
+			&:not(:last-child)::before {
+				content: '';
+				position: absolute;
+				top: 3px;
+				right: 0px;
+				width: 1px;
+				height: calc(100% + 1rem);
+				background-color: $color-timeline;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: 3px;
+				right: -5px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: $color-timeline;
+			}
+		}
 	}
 </style>

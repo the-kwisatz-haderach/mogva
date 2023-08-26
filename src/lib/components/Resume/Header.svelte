@@ -38,7 +38,8 @@
 
 	.contact-details {
 		display: flex;
-		gap: 1rem;
+		flex-direction: column;
+		gap: 0.5rem;
 		font-size: 0.9rem;
 		margin-top: 1.5rem;
 	}
@@ -46,7 +47,6 @@
 	header {
 		$border-size: 0.5rem;
 		color: var(--color-text-contrast);
-		padding: 4rem 3rem 4rem;
 		@include m.linear-gradient-black;
 		position: relative;
 		margin-bottom: $border-size;
@@ -61,10 +61,17 @@
 		}
 	}
 
+	.header-text-container {
+		@include m.padded;
+	}
+
 	.header-content {
 		display: flex;
-		align-items: flex-end;
-		gap: 3rem;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
 	}
 
 	:global(.header-text-container > p) {
@@ -75,6 +82,37 @@
 		width: 250px;
 		height: 250px;
 		border-radius: 50%;
+	}
+
+	@include m.md {
+		.header-content {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		header {
+			padding: 4rem 3rem 4rem;
+		}
+
+		.contact-details {
+			flex-direction: row;
+			gap: 1rem;
+			font-size: 0.9rem;
+			margin-top: 1.5rem;
+		}
+		.header-content {
+			display: flex;
+			gap: 3rem;
+		}
+	}
+
+	@include m.lg {
+		.header-content {
+			align-items: flex-end;
+			flex-direction: row;
+		}
+		.header-text-container {
+			padding: 0;
+		}
 	}
 
 	@media print {

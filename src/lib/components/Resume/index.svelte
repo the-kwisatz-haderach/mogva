@@ -7,7 +7,7 @@
 	import { experiences } from './experiences';
 </script>
 
-<Container maxWidth={1400} padded={false} style="padding: 150px 40px 40px;">
+<Container class="resume-container" maxWidth={1400} padded={false}>
 	<article>
 		<div class="wrapper">
 			<Header />
@@ -23,6 +23,7 @@
 </Container>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	:global(.icon) {
 		width: 25px;
 		height: 25px;
@@ -37,20 +38,34 @@
 		width: 100%;
 	}
 
-	.wrapper {
-		border: 1px solid #ffffff39;
-	}
-
 	main {
+		// padding: 3rem 2.5rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 		background-color: white;
-		padding: 3rem 2.5rem;
+		@include m.padded;
 		display: flex;
+		flex-direction: column;
 		gap: 2.5rem;
 		& > section:first-child {
 			flex: 1;
 		}
 	}
 
+	@include m.md {
+		:global(.resume-container) {
+			padding: 150px 40px 40px;
+		}
+		.wrapper {
+			border: 1px solid #ffffff39;
+		}
+	}
+
+	@include m.lg {
+		main {
+			flex-direction: row;
+		}
+	}
 	@media print {
 		.wrapper {
 			border: none;

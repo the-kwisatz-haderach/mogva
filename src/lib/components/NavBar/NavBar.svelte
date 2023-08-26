@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import NavLink from '../NavLink/NavLink.svelte';
 	import ThemeSwitch from '../ThemeSwitch.svelte';
 
@@ -16,7 +17,7 @@
 		role="button"
 		tabindex={0}
 		href="/"
-		on:click={window.location.pathname === '/'
+		on:click={$page.url.pathname === '/'
 			? (e) => {
 					e.preventDefault();
 					document.getElementById('top')?.scrollIntoView({ behavior: 'smooth' });
