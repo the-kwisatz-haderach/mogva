@@ -22,7 +22,7 @@
 		<ul class="education-list">
 			{#each educations as education}
 				<li>
-					<Typography size="sm" weight="500">{education.title}</Typography>
+					<Typography noMargin size="sm" weight="500">{education.title}</Typography>
 					<div class="flex">
 						<img src={education.imgSrc} alt={education.subtitle} />
 						<div class="sub">
@@ -54,19 +54,19 @@
 		<Typography variant="h3">Languages</Typography>
 		<ul class="language-list">
 			<li>
-				<Typography>Swedish</Typography>
+				<Typography noMargin weight="400">Swedish</Typography>
 				<Typography size="xs" color="subtle">Native or bilingual proficiency</Typography>
 			</li>
 			<li>
-				<Typography>English</Typography>
+				<Typography noMargin weight="400">English</Typography>
 				<Typography size="xs" color="subtle">Full professional proficiency</Typography>
 			</li>
 			<li>
-				<Typography>Croatian</Typography>
+				<Typography noMargin weight="400">Croatian</Typography>
 				<Typography size="xs" color="subtle">Elementary proficiency</Typography>
 			</li>
 			<li>
-				<Typography>Spanish</Typography>
+				<Typography noMargin weight="400">Spanish</Typography>
 				<Typography size="xs" color="subtle">Elementary proficiency</Typography>
 			</li>
 		</ul>

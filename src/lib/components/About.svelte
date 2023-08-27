@@ -8,26 +8,19 @@
 		<div class="text-wrapper">
 			<Typography color="contrast" variant="h2">About me</Typography>
 			<Typography color="contrast"
-				>My path to becoming a software developer has not been all straight. I spent the first five
-				years of my career managing digital projects and teams. During this time, I noticed I was
-				the happiest getting my hands dirty with the nitty gritty parts of the development process,
-				and started dreaming of a new career.</Typography
+				>My path to becoming a developer has been anything but straight. Having spent the first five
+				years of my career managing digital projects, an Indian subsidiary office in Mumbai, and
+				finally a team of digital analysts, I jumped on the opportunity to follow a growing dream of
+				specialising in software development.</Typography
 			>
-			<Typography color="contrast">
-				Not being scared of change, I switched from an already great position and incredible
-				colleagues to jump on the fast-paced SALT developer bootcamp.
-			</Typography>
-			<Typography color="contrast">
-				Since finishing, I've spent countless hours picking up new knowledge in the various domains
-				of software development, both on the job but naturally also on my free time - not because I
-				had to but because I truly love the work.
-			</Typography>
 			<Typography color="contrast"
-				>Today, I consider my unconventional journey a big strength. Being quick to see the bigger
-				picture, I will lean on my past experiences to improve teamwork and communication, engage
-				relevant stakeholders early on, and am not afraid to express new ideas or feedback on
-				established norms.
-			</Typography>
+				>In most other industries this kind of transition is probably nowhere near as painless but
+				in IT all you really need is your passion and a dedication to learning.</Typography
+			>
+			<Typography color="contrast"
+				>As a learning-oriented person, this is an environment I thrive in. My main driving force is
+				the feeling of overcoming challenges and doing so with like minded people.</Typography
+			>
 		</div>
 		<!-- <div class="image-wrapper">
 			<img

@@ -7,10 +7,10 @@
 		subtle: 'var(--color-text-subtle)'
 	};
 	const defaultSize: Record<Variant, Size> = {
-		h1: 'xxl',
-		h2: 'xl',
-		h3: 'lg',
-		h4: 'md',
+		h1: 'xxxl',
+		h2: 'xxl',
+		h3: 'xl',
+		h4: 'lg',
 		h5: 'md',
 		h6: 'sm',
 		p: 'md'
