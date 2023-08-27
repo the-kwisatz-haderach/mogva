@@ -86,7 +86,14 @@
 	.footer-bottom {
 		width: 100%;
 		margin-top: 5rem;
-		text-align: center;
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
+		& > a {
+			font-size: 0.8rem;
+			color: var(--color-text-contrast);
+			font-weight: 200;
+		}
 	}
 
 	@media print {

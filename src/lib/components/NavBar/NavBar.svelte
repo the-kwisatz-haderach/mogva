@@ -118,7 +118,7 @@
 		height: 50px;
 		width: 50px;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
 		border: none;
 		background-color: transparent;

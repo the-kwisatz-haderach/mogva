@@ -60,11 +60,6 @@
 		flex: 1;
 	}
 
-	@include m.sm {
-		.content-wrapper {
-			margin-bottom: -6rem;
-		}
-	}
 	@include m.md {
 		.text-wrapper {
 			padding-bottom: 7rem;

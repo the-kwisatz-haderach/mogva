@@ -150,8 +150,8 @@
 		color: rgba(0, 0, 0, 0.8);
 		text-align: center;
 		font-weight: 500;
-		opacity: 0;
-		font-size: 0.9rem;
+		opacity: 1;
+		font-size: 0.8rem;
 	}
 
 	@include m.sm {
@@ -161,6 +161,10 @@
 	}
 
 	@include m.md {
+		.link-label {
+			opacity: 0;
+			font-size: 0.9rem;
+		}
 		:global(.icon-wrapper > *) {
 			width: 45px;
 			height: 45px;

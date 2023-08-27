@@ -25,7 +25,7 @@
 <Container id="knowledge">
 	<div class="content-wrapper">
 		<Typography color="contrast" variant="h2">Expertise</Typography>
-		<Typography color="contrast"
+		<Typography narrow color="contrast"
 			>I always look for ways to improve my knowledge. This means not shying away from a challenge
 			but rather embracing the unknown and picking up new skills along the way.</Typography
 		>

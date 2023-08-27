@@ -25,8 +25,8 @@
 					<Typography size="sm" weight="500">{education.title}</Typography>
 					<div class="flex">
 						<img src={education.imgSrc} alt={education.subtitle} />
-						<div>
-							<Typography size="xs" color="subtle">
+						<div class="sub">
+							<Typography size="xs" color="subtle" noMargin>
 								{education.subtitle}
 							</Typography>
 							<Typography size="xs">{education.timestamp}</Typography>
@@ -79,6 +79,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+	}
+
+	.sub {
+		display: flex;
+		flex-direction: column;
 	}
 	.education-list {
 		display: flex;

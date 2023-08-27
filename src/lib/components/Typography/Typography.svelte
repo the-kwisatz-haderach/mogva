@@ -43,7 +43,7 @@
 		max-width: 800px;
 		margin: auto;
 	}
-	p:not(:last-of-type) {
+	p:not(:last-of-type, .noMargin) {
 		margin-bottom: 1rem;
 	}
 	p.xs,
@@ -58,19 +58,19 @@
 	}
 
 	.xs {
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 	}
 	.sm {
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 	.md {
 		font-size: 1rem;
 	}
 	.lg {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 	}
 	.xl {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		line-height: 1.4;
 	}
 	.xxl {
