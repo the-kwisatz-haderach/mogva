@@ -3,6 +3,7 @@
 	import Counter from './Counter/Counter.svelte';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import Typography from './Typography/Typography.svelte';
+	const years = new Date().getFullYear() - 2014;
 </script>
 
 <Container maxWidth={800}>
@@ -10,7 +11,7 @@
 		<div class="text-wrapper">
 			<Typography weight="300" size="xxl" color="contrast">
 				With over
-				<Counter play={isIntersecting} count={8} />
+				<Counter intervalMs={80} play={isIntersecting} count={years} />
 				years in the industry,
 				<br />I've got you covered.
 			</Typography>
