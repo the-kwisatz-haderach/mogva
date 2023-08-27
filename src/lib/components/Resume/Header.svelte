@@ -116,12 +116,18 @@
 	}
 
 	@media print {
+		.header-content {
+			gap: 1rem;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			flex-direction: row;
+		}
 		header {
 			padding: 2.5rem;
 		}
 		img {
-			width: 150px;
-			height: 150px;
+			width: 200px;
+			height: 200px;
 			margin-bottom: 1rem;
 		}
 	}
