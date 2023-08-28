@@ -132,4 +132,27 @@
 			font-size: 3rem;
 		}
 	}
+	@include m.xl {
+		.xs {
+			font-size: 0.8rem;
+		}
+		.sm {
+			font-size: 0.9rem;
+		}
+		.md {
+			font-size: 1rem;
+		}
+		.lg {
+			font-size: 1.6rem;
+		}
+		.xl {
+			font-size: 2rem;
+		}
+		.xxl {
+			font-size: 2.5rem;
+		}
+		.xxxl {
+			font-size: 3.5rem;
+		}
+	}
 </style>

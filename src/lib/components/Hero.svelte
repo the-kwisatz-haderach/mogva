@@ -5,8 +5,8 @@
 	import Container from './Container/Container.svelte';
 </script>
 
-<header>
-	<Container>
+<Container>
+	<header>
 		<IntersectionObserver let:isIntersecting once>
 			<div class="content-wrapper">
 				<div class="text-container transition-before" class:transition-after={isIntersecting}>
@@ -23,16 +23,16 @@
 				</div> -->
 			</div>
 		</IntersectionObserver>
-	</Container>
-</header>
+	</header>
+</Container>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
 
 	header {
-		height: calc(100vh - rem);
+		min-height: 80vh;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		margin-bottom: -3rem;
 		padding-bottom: 3rem;
 		padding-top: 6rem;
@@ -75,7 +75,6 @@
 		}
 		header {
 			padding-top: 0;
-			min-height: calc(100vh + 3rem);
 		}
 		.content-wrapper {
 			padding-top: 8rem;

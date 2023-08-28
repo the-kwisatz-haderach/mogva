@@ -54,4 +54,9 @@
 			width: 50px;
 		}
 	}
+	@include m.xl {
+		span {
+			width: 60px;
+		}
+	}
 </style>
