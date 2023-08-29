@@ -40,7 +40,7 @@
 
 <style>
 	div {
-		width: auto;
-		height: auto;
+		width: inherit;
+		height: inherit;
 	}
 </style>
