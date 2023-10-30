@@ -58,4 +58,10 @@
 			font-size: 1rem;
 		}
 	}
+
+	@media print {
+		a {
+			font-size: 0.9rem;
+		}
+	}
 </style>

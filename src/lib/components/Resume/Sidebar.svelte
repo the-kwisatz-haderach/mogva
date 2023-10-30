@@ -119,44 +119,9 @@
 	}
 
 	@media print {
-		.language-list {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			& > li {
-				flex: 1 0 40%;
-			}
-		}
-		section {
-			flex: 1 1 40%;
-		}
-		.education-section {
-			flex: 1 0 100%;
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
-
-		.education-list {
-			flex-direction: row;
-			gap: 2rem;
-			& > li {
-				flex: 1 1 40%;
-			}
-		}
-
-		.certifications-section {
-			flex: 1 0 100%;
-			order: 4;
-		}
-
-		.skills-section {
-			order: 2;
-		}
-
 		aside {
-			width: 100%;
-			flex-direction: row;
-			flex-wrap: wrap;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>

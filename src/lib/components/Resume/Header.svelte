@@ -11,7 +11,7 @@
 			<Typography size="lg" weight="500" color="contrast">
 				Passionate fullstack developer with management sensibilities.
 			</Typography>
-			<Typography weight="300" color="contrast" size="sm">
+			<Typography weight="400" color="contrast" size="sm">
 				I'm an engineer with a knack for developing well-tested, scalable solutions using
 				Typescript, NodeJS, Go, React, Svelte, AWS and GCP. With a background in management and
 				leadership, I'm quick to see the bigger picture, identifying ways to improve both the code
@@ -30,11 +30,6 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
-
-	:global(.location) {
-		position: relative;
-		bottom: 2px;
-	}
 
 	.contact-details {
 		display: flex;
@@ -123,7 +118,7 @@
 			flex-direction: row;
 		}
 		header {
-			padding: 2.5rem;
+			padding: 1.5rem;
 		}
 		img {
 			width: 200px;

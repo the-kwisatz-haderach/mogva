@@ -8,9 +8,11 @@
 	{#each certifications as certification}
 		<a href={certification.link} target="_blank">
 			<li class="certification">
-				<Typography color="contrast" size="xs">{certification.timestamp}</Typography>
-				<Typography color="contrast" size="xs" weight="600">{certification.name}</Typography>
-				<Typography color="contrast" size="xs">{certification.institute}</Typography>
+				<Typography noMargin color="contrast" size="xs">{certification.timestamp}</Typography>
+				<Typography noMargin color="contrast" size="xs" weight="600"
+					>{certification.name}</Typography
+				>
+				<Typography noMargin color="contrast" size="xs">{certification.institute}</Typography>
 			</li>
 		</a>
 	{/each}
@@ -60,16 +62,6 @@
 			background-size: cover;
 			width: 250px;
 			height: 250px;
-		}
-	}
-
-	@media print {
-		ul {
-			flex-direction: row;
-		}
-
-		a {
-			flex: 1 0 40%;
 		}
 	}
 </style>

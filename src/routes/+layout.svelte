@@ -36,4 +36,10 @@
 		width: 100%;
 		height: 150px;
 	}
+
+	@media print {
+		.nav-wrapper {
+			display: none;
+		}
+	}
 </style>

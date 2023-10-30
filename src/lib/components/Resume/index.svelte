@@ -39,7 +39,6 @@
 	}
 
 	main {
-		// padding: 3rem 2.5rem;
 		padding-top: 3rem;
 		padding-bottom: 3rem;
 		background-color: white;
@@ -55,6 +54,9 @@
 	@include m.md {
 		:global(.resume-container) {
 			padding: 150px 40px 40px;
+			@media print {
+				padding: 0;
+			}
 		}
 		.wrapper {
 			border: 1px solid #ffffff39;
@@ -75,7 +77,12 @@
 			max-width: 100%;
 		}
 		main {
-			flex-direction: column;
+			padding: 2rem;
+			gap: 2rem;
+			flex-direction: row;
+			& > section:first-child {
+				flex: unset;
+			}
 		}
 	}
 </style>
