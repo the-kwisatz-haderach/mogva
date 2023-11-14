@@ -22,7 +22,11 @@
 					<Typography color="subtle" size="sm">{item.subtitle}</Typography>
 				</div>
 				{#each item.text as t}
-					<Typography class="text" size="sm">{t}</Typography>
+					{#if t.startsWith('-')}
+						<Typography noMargin class="text" size="sm">{t}</Typography>
+					{:else}
+						<Typography class="text" size="sm">{t}</Typography>
+					{/if}
 				{/each}
 				<ul class="tag-list">
 					{#each item.tags as tag}
