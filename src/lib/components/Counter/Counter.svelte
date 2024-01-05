@@ -33,7 +33,7 @@
 		font-weight: 900;
 		padding-left: 4px;
 		padding-right: 4px;
-		width: 50px;
+		width: 70px;
 		font-size: 200%;
 		line-height: 0;
 		display: inline-block;
@@ -41,22 +41,22 @@
 
 	@include m.sm {
 		span {
-			width: 50px;
+			width: 70px;
 		}
 	}
 	@include m.md {
 		span {
-			width: 50px;
+			width: 80px;
 		}
 	}
 	@include m.lg {
 		span {
-			width: 50px;
+			width: 90px;
 		}
 	}
 	@include m.xl {
 		span {
-			width: 60px;
+			width: 100px;
 		}
 	}
 </style>
