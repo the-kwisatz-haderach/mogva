@@ -59,7 +59,7 @@ const experiencesConfig = {
 	ingkaFavourites: {
 		title: 'Senior Fullstack Developer',
 		imgSrc: ikeaLogo,
-		timestamp: `Feb 2023 - ${new Date().toLocaleString('default', { month: 'short' })} 2023`,
+		timestamp: 'Feb 2023 - Dec 2023',
 		subtitle: 'Ingka Group - Malmö, Sweden (remote)',
 		text: [
 			"The list experience team works on the favourites/wishlist and related functionality on ikea.com. As senior developer, I'm both delivering features as well as guiding the other developers through code reviews and workshops. I'm also actively improving our ways of working in terms of CI/CD, testing, security, performance etc. Work is carried out in a highly agile manner with close collaboration between UX, PO and developers to set and fullfil goals in a data driven way.",
