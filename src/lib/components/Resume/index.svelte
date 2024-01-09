@@ -1,26 +1,78 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
 	import Container from '../Container/Container.svelte';
 	import ExperienceList from '../ExperienceList/ExperienceList.svelte';
 	import Typography from '../Typography/Typography.svelte';
 	import Header from './Header.svelte';
-	import Sidebar from './Sidebar.svelte';
-	import { experiences } from './experiences';
+	import type { ResumeBlok } from '$lib/storyblok/types';
+	import Tag from '../Tag.svelte';
+	import Certifications from './Certifications.svelte';
+	import EducationBlok from './EducationBlok.svelte';
+
+	export let blok: ResumeBlok;
 </script>
 
-<Container class="resume-container" maxWidth={1400} padded={false}>
-	<article>
-		<div class="wrapper">
-			<Header />
-			<main>
-				<section>
-					<Typography variant="h2">Assignments & experience</Typography>
-					<ExperienceList items={Object.values(experiences)} />
-				</section>
-				<Sidebar />
-			</main>
-		</div>
-	</article>
-</Container>
+<div use:storyblokEditable={blok}>
+	<Container class="resume-container" maxWidth={1400} padded={false}>
+		<article>
+			<div class="wrapper">
+				<Header
+					name={blok.name}
+					subtitle={blok.subtitle}
+					description={blok.description}
+					city={blok.city}
+					phone={blok.phone}
+					email={blok.email}
+					photo={blok.photo}
+				/>
+				<main>
+					<section>
+						<Typography variant="h2">Assignments & experience</Typography>
+						<ExperienceList bloks={blok.experience} />
+					</section>
+					<aside>
+						<section>
+							<Typography variant="h3">Key skills</Typography>
+							<ul class="skills">
+								{#each blok.key_skills as skill}
+									<li><Tag size="sm">{skill}</Tag></li>
+								{/each}
+							</ul>
+						</section>
+						<section>
+							<Typography variant="h3">Education</Typography>
+							<ul class="education-list">
+								{#each blok.education as educationBlok}
+									<li>
+										<EducationBlok blok={educationBlok} />
+									</li>
+								{/each}
+							</ul>
+						</section>
+						<section>
+							<Certifications certifications={blok.certifications} />
+						</section>
+						<section>
+							<Typography variant="h3">Personal</Typography>
+							<Typography size="sm">{blok.personal}</Typography>
+						</section>
+						<section>
+							<Typography variant="h3">Languages</Typography>
+							<ul class="language-list">
+								{#each blok.languages as language}
+									<li>
+										<Typography noMargin weight="400">{language.title}</Typography>
+										<Typography size="xs" color="subtle">{language.company}</Typography>
+									</li>
+								{/each}
+							</ul>
+						</section>
+					</aside>
+				</main>
+			</div>
+		</article>
+	</Container>
+</div>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
@@ -51,6 +103,31 @@
 		}
 	}
 
+	aside {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0px 6px;
+	}
+
+	.education-list {
+		display: flex;
+		flex-direction: column;
+		& > li {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		& > li:not(:last-child) {
+			margin-bottom: 1.5rem;
+		}
+	}
+
 	@include m.md {
 		:global(.resume-container) {
 			padding: 150px 40px 40px;
@@ -66,6 +143,9 @@
 	@include m.lg {
 		main {
 			flex-direction: row;
+		}
+		aside {
+			width: 240px;
 		}
 	}
 	@media print {
@@ -83,6 +163,11 @@
 			& > section:first-child {
 				flex: unset;
 			}
+		}
+
+		aside {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>

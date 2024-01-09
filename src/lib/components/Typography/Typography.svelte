@@ -13,7 +13,9 @@
 		h4: 'lg',
 		h5: 'md',
 		h6: 'sm',
-		p: 'md'
+		p: 'md',
+		span: 'md',
+		div: 'md'
 	};
 
 	export let variant: Variant = 'p';

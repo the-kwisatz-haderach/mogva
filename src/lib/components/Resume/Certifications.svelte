@@ -1,18 +1,19 @@
-<script>
+<script lang="ts">
+	import type { ResumeExperienceBlok } from '$lib/storyblok/types';
 	import Typography from '../Typography/Typography.svelte';
-	import { certifications } from './certifications';
+	export let certifications: ResumeExperienceBlok[] = [];
 </script>
 
 <Typography variant="h3">Certificates & courses</Typography>
 <ul>
 	{#each certifications as certification}
-		<a href={certification.link} target="_blank">
+		<a href={certification?.link?.cached_url || ''} target="_blank">
 			<li class="certification">
 				<Typography noMargin color="contrast" size="xs">{certification.timestamp}</Typography>
 				<Typography noMargin color="contrast" size="xs" weight="600"
-					>{certification.name}</Typography
+					>{certification.title}</Typography
 				>
-				<Typography noMargin color="contrast" size="xs">{certification.institute}</Typography>
+				<Typography noMargin color="contrast" size="xs">{certification.company}</Typography>
 			</li>
 		</a>
 	{/each}

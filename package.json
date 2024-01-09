@@ -35,6 +35,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@storyblok/svelte": "^4.0.0",
+		"@vitejs/plugin-basic-ssl": "^1.0.2",
 		"intersection-observer-polyfill": "^0.1.0",
 		"lodash.throttle": "^4.1.1",
 		"normalize.css": "^8.0.1"

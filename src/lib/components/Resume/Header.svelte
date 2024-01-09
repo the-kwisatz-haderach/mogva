@@ -1,28 +1,33 @@
-<script>
+<script lang="ts">
+	import type { Asset } from '$lib/storyblok/types';
+
 	import Link from '../Link/Link.svelte';
 	import Typography from '../Typography/Typography.svelte';
+
+	export let name = '';
+	export let subtitle = '';
+	export let description = '';
+	export let city = '';
+	export let phone = '';
+	export let email = '';
+	export let photo: Asset | null;
 </script>
 
 <header>
 	<div class="header-content">
-		<img src="/cv-photo.png" alt="Gustaf Lundström" />
+		<img src={photo?.filename} alt={photo?.alt} />
 		<div class="header-text-container">
-			<Typography variant="h1" color="contrast" size="xxxl">Gustaf Lundström</Typography>
+			<Typography variant="h1" color="contrast" size="xxxl">{name}</Typography>
 			<Typography size="lg" weight="500" color="contrast">
-				Passionate fullstack developer with management sensibilities.
+				{subtitle}
 			</Typography>
 			<Typography weight="400" color="contrast" size="sm">
-				I'm an engineer with a knack for developing well-tested, scalable solutions using
-				Typescript, NodeJS, Go, React, Svelte, AWS and GCP. With a background in management and
-				leadership, I'm quick to see the bigger picture, identifying ways to improve both the code
-				and the way it is delivered while ensuring everybody is on the same page.
+				{description}
 			</Typography>
 			<div class="contact-details">
-				<Typography class="location" color="contrast" weight="500" size="sm"
-					>Stockholm, Sweden</Typography
-				>
-				<Link href="tel:+46729000451">(+46) 729-00 04 51</Link>
-				<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
+				<Typography class="location" color="contrast" weight="500" size="sm">{city}</Typography>
+				<Link href={`tel:${phone.replace(/([-()]|\s+)/g, '')}`}>{phone}</Link>
+				<Link href={`mailto:${email}`}>{email}</Link>
 			</div>
 		</div>
 	</div>
