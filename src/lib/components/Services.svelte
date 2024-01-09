@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Typography from './Typography/Typography.svelte';
 	import frontendImg from '$lib/assets/images/coding.png';
 	import backendImg from '$lib/assets/images/database-storage.png';
@@ -9,8 +9,11 @@
 	import { sineInOut } from 'svelte/easing';
 	import Container from './Container/Container.svelte';
 	import Tag from './Tag.svelte';
-	import { experienceTags } from './Resume/experiences';
 	import Button from './Button/Button.svelte';
+
+	export let title = '';
+	export let description = '';
+	export let skills: string[] = [];
 
 	const blocks = [
 		{ label: 'Frontend', imgSrc: frontendImg },
@@ -18,15 +21,13 @@
 		{ label: 'Cloud', imgSrc: cloudImg },
 		{ label: 'Testing', imgSrc: testingImg }
 	];
-
-	const skills = [...experienceTags.keys()];
 </script>
 
 <Container id="knowledge">
 	<div class="content-wrapper">
-		<Typography color="contrast" variant="h2">Expertise</Typography>
+		<Typography color="contrast" variant="h2">{title}</Typography>
 		<Typography narrow color="contrast">
-			I work across the whole spectrum of web development.
+			{description}
 		</Typography>
 		<IntersectionObserver let:isIntersecting once style="margin-bottom: 3rem;">
 			<div class="flex">

@@ -1,43 +1,32 @@
 <script lang="ts">
-	import qlikLogo from '$lib/assets/images/qlik_logo.png';
-	import ikeaLogo from '$lib/assets/images/ikea_logo.png';
-	import heliospectraLogo from '$lib/assets/images/heliospectra_logo.webp';
-	import electroluxLogo from '$lib/assets/images/electrolux_logo.png';
-	import systeconLogo from '$lib/assets/images/systecon_logo.png';
 	import Typography from './Typography/Typography.svelte';
 	import Button from './Button/Button.svelte';
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import { fade } from 'svelte/transition';
 	import Container from './Container/Container.svelte';
+	import type { Asset } from '$lib/storyblok/types';
 
-	const images: Array<{ src: string; alt: string }> = [
-		{ src: qlikLogo, alt: 'Qlik logo' },
-		{ src: ikeaLogo, alt: 'IKEA logo' },
-		{ src: electroluxLogo, alt: 'Electrolux logo' },
-		{ src: heliospectraLogo, alt: 'Heliospectra logo' },
-		{ src: systeconLogo, alt: 'Systecon logo' }
-	];
+	export let title = '';
+	export let description = '';
+	export let logos: Asset[] = [];
 </script>
 
 <Container>
 	<div class="main">
-		<Typography color="contrast" variant="h2">Past assignments</Typography>
-		<Typography narrow color="contrast"
-			>I've had the privilege to work with a lot of different companies over the years. These are
-			some of the more recent ones.</Typography
-		>
+		<Typography color="contrast" variant="h2">{title}</Typography>
+		<Typography narrow color="contrast">{description}</Typography>
 		<span class="cta">
 			<Button color="black" href="/resume">View resume</Button>
 		</span>
 		<IntersectionObserver let:isIntersecting once>
 			{#if isIntersecting}
 				<ul>
-					{#each images as image, index}
+					{#each logos as logo, index}
 						<li
 							style:visibility={isIntersecting ? 'initial' : 'hidden'}
 							transition:fade|global={{ duration: 2000, delay: 500 + index * 400 }}
 						>
-							<img src={image.src} alt={image.alt} />
+							<img src={logo.filename} alt={logo.alt} />
 						</li>
 					{/each}
 				</ul>

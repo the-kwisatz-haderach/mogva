@@ -1,3 +1,5 @@
+import { dev } from '$app/environment';
+
 export async function load({ parent }) {
 	const { storyblokApi } = await parent();
 	// const spaceId = url.searchParams.get('_storyblok_tk[space_id]');
@@ -14,7 +16,7 @@ export async function load({ parent }) {
 	// }
 
 	const dataStory = await storyblokApi.get('cdn/stories/resume', {
-		version: 'published'
+		version: dev ? 'draft' : 'published'
 	});
 
 	return {

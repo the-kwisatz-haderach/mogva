@@ -8,6 +8,9 @@
 	import IntersectionObserver from './IntersectionObserver/IntersectionObserver.svelte';
 	import { fly } from 'svelte/transition';
 
+	export let title = '';
+	export let description = '';
+
 	const links = [
 		{
 			label: 'LinkedIn',
@@ -36,10 +39,9 @@
 	<IntersectionObserver let:isIntersecting once>
 		<div class="content-wrapper">
 			<div class="text-container">
-				<Typography variant="h2">Get in touch</Typography>
+				<Typography variant="h2">{title}</Typography>
 				<Typography weight="400">
-					Do you need help tackling a challenging problem or project? Drop me a line on LinkedIn, or
-					send me an email.
+					{description}
 				</Typography>
 			</div>
 			<div class="options-container">

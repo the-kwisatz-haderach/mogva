@@ -3,6 +3,9 @@
 	import Typography from './Typography/Typography.svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import Container from './Container/Container.svelte';
+
+	export let prefix = '';
+	export let title = '';
 </script>
 
 <header>
@@ -10,12 +13,9 @@
 		<IntersectionObserver let:isIntersecting once style="">
 			<div class="content-wrapper">
 				<div class="text-container transition-before" class:transition-after={isIntersecting}>
-					<Typography styled="ingress" size="lg" color="contrast"
-						>No-nonsense fullstack web development</Typography
-					>
+					<Typography styled="ingress" size="lg" color="contrast">{prefix}</Typography>
 					<Typography noMargin variant="h1" size="xxxl" color="contrast">
-						Specialised in building safe, scalable, reliable & user friendly applications for the
-						web.
+						{title}
 					</Typography>
 				</div>
 				<!-- <div class="image-container">

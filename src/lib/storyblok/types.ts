@@ -20,6 +20,29 @@ export type Asset = {
 	fieldtype: string;
 };
 
+export type BlokTypes = HeroBlok;
+
+export type LandingPageBlok = {
+	prefix: string;
+	title: string;
+	intro_text: string;
+	contact_us_title: string;
+	contact_us_text: string;
+	experience_title: string;
+	experience_text: string;
+	experience_skill_tags: string[];
+	about_title: string;
+	about_text: ISbRichtext;
+	clients_title: string;
+	clients_description: string;
+	clients_logos: Asset[];
+};
+
+export type HeroBlok = {
+	title: string;
+	prefix?: string;
+};
+
 export type ResumeExperienceBlok = {
 	_uid: string;
 	logo: Asset;

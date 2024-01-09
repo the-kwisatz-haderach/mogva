@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { renderRichText } from '@storyblok/svelte';
+	import { renderRichText, storyblokEditable } from '@storyblok/svelte';
 	import Tag from '../Tag.svelte';
 	import Typography from '../Typography/Typography.svelte';
 	import type { ResumeExperienceBlok } from '$lib/storyblok/types';
@@ -7,7 +7,7 @@
 	let text = renderRichText(blok.text);
 </script>
 
-<div class="container">
+<div use:storyblokEditable={blok} class="container">
 	<div class="header-wrapper">
 		<div class="experience-header">
 			<div class="flex">
