@@ -85,7 +85,7 @@
 	}
 
 	li {
-		margin-bottom: 0;
+		margin-bottom: 0 !important;
 	}
 	img {
 		width: 40px;
