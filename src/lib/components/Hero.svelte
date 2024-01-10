@@ -13,8 +13,8 @@
 		<IntersectionObserver let:isIntersecting once style="">
 			<div class="content-wrapper">
 				<div class="text-container transition-before" class:transition-after={isIntersecting}>
-					<Typography styled="ingress" size="lg" color="contrast">{prefix}</Typography>
-					<Typography noMargin variant="h1" size="xxxl" color="contrast">
+					<Typography styled="ingress" size="lg" color="light">{prefix}</Typography>
+					<Typography noMargin variant="h1" size="xxxl" color="light">
 						{title}
 					</Typography>
 				</div>
@@ -37,7 +37,7 @@
 		margin-bottom: -3rem;
 		padding-bottom: 3rem;
 		padding-top: 6rem;
-		@include m.linear-gradient-black-dark;
+		background-image: linear-gradient(160deg, #1a1a1a, #000);
 	}
 
 	.content-wrapper {

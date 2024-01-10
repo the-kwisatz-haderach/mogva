@@ -17,17 +17,17 @@
 	<div class="header-content">
 		<img src={photo?.filename} alt={photo?.alt} />
 		<div class="header-text-container">
-			<Typography variant="h1" color="contrast" size="xxxl">{name}</Typography>
-			<Typography size="lg" weight="500" color="contrast">
+			<Typography variant="h1" color="light" size="xxxl">{name}</Typography>
+			<Typography size="lg" weight="500" color="light">
 				{subtitle}
 			</Typography>
-			<Typography weight="400" color="contrast" size="sm">
+			<Typography weight="400" color="light" size="sm">
 				{description}
 			</Typography>
 			<div class="contact-details">
-				<Typography class="location" color="contrast" weight="500" size="sm">{city}</Typography>
-				<Link href={`tel:${phone.replace(/([-()]|\s+)/g, '')}`}>{phone}</Link>
-				<Link href={`mailto:${email}`}>{email}</Link>
+				<Typography class="location" color="light" weight="500" size="sm">{city}</Typography>
+				<Link light href={`tel:${phone.replace(/([-()]|\s+)/g, '')}`}>{phone}</Link>
+				<Link light href={`mailto:${email}`}>{email}</Link>
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 	header {
 		$border-size: 0.5rem;
 		color: var(--color-text-contrast);
-		@include m.linear-gradient-black;
+		background-image: linear-gradient(160deg, #020202, #303030);
 		position: relative;
 		margin-bottom: $border-size;
 		&::after {

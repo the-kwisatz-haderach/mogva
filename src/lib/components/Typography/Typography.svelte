@@ -4,7 +4,9 @@
 	const colorMap: Record<Color, string> = {
 		regular: 'var(--color-text-primary)',
 		contrast: 'var(--color-text-contrast)',
-		subtle: 'var(--color-text-subtle)'
+		subtle: 'var(--color-text-subtle)',
+		light: 'var(--color-silver-light)',
+		dark: 'var(--color-black)'
 	};
 	const defaultSize: Record<Variant, Size> = {
 		h1: 'xxxl',

@@ -1,0 +1,41 @@
+html[data-theme='light']:root {
+	--color-bg-primary: var(--color-silver);
+	--color-bg-primary-dark: var(--color-silver-light);
+	--color-bg-secondary: var(--color-silver);
+	--color-bg-subtle: var(--color-grey-light);
+	--color-bg-paper: white;
+	--color-text-primary: var(--color-black);
+	--color-text-inverse: var(--color-silver);
+	--color-text-contrast: var(--color-black);
+	--color-text-contrast-inverse: var(--color-silver);
+	--color-text-subtle: var(--color-grey);
+	--linear-gradient-silver: linear-gradient(240deg, #cecece, #999999);
+	--linear-gradient-silver-reverse: linear-gradient(240deg, #999999, #cecece);
+	--linear-gradient-black: linear-gradient(240deg, #dddddd, #999999);
+	--linear-gradient-black-dark: linear-gradient(240deg, #e6e6e6, #c7c7c7);
+	--linear-gradient-black-reverse: linear-gradient(240deg, #999999, #cecece);
+	--linear-gradient-black-dark-reverse: linear-gradient(240deg, #999999, #cecece);
+	--filter-logo: saturate(0) invert(1) brightness(0.6);
+	--filter-logo-hover: unset;
+}
+
+html[data-theme='dark']:root {
+	--color-bg-primary: var(--color-black);
+	--color-bg-primary-dark: var(--color-black-dark);
+	--color-bg-secondary: var(--color-silver);
+	--color-bg-subtle: var(--color-grey-light);
+	--color-bg-paper: var(--color-black);
+	--color-text-primary: var(--color-black);
+	--color-text-inverse: var(--color-silver);
+	--color-text-contrast: var(--color-silver);
+	--color-text-contrast-inverse: var(--color-black);
+	--color-text-subtle: var(--color-grey);
+	--linear-gradient-silver: linear-gradient(240deg, #cecece, #999999);
+	--linear-gradient-silver-reverse: linear-gradient(240deg, #999999, #cecece);
+	--linear-gradient-black: linear-gradient(160deg, #020202, #303030);
+	--linear-gradient-black-dark: linear-gradient(160deg, #1a1a1a, #000);
+	--linear-gradient-black-reverse: linear-gradient(160deg, #303030, #020202);
+	--linear-gradient-black-dark-reverse: linear-gradient(160deg, #000, #1c1c1c);
+	--filter-logo: saturate(0) invert(1) brightness(0.8);
+	--filter-logo-hover: saturate(0) invert(1) brightness(1.5);
+}

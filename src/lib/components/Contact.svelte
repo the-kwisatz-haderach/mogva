@@ -164,7 +164,6 @@
 
 	@include m.md {
 		.link-label {
-			opacity: 0;
 			font-size: 0.9rem;
 		}
 		:global(.icon-wrapper > *) {
@@ -179,6 +178,9 @@
 		}
 	}
 	@include m.lg {
+		.link-label {
+			opacity: 0;
+		}
 		.text-container {
 			text-align: left;
 			width: 40%;

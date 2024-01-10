@@ -4,9 +4,10 @@
 	export let href = '';
 	export let external = false;
 	export let invertHover = false;
+	export let light = false;
 </script>
 
-<a {href} target={external ? '_blank' : undefined} class:invertHover>
+<a {href} target={external ? '_blank' : undefined} class:invertHover class:light>
 	{#if external}<ExternalLink class="external" />{/if}
 	<slot />
 </a>
@@ -41,6 +42,13 @@
 		}
 		&:hover::before {
 			transform: scaleX(1);
+		}
+	}
+
+	a.light {
+		color: var(--color-silver-light);
+		&::before {
+			background-color: var(--color-silver-light);
 		}
 	}
 

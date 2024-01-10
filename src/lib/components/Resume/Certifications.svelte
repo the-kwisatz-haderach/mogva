@@ -9,11 +9,9 @@
 	{#each certifications as certification}
 		<a href={certification?.link?.cached_url || ''} target="_blank">
 			<li class="certification">
-				<Typography noMargin color="contrast" size="xs">{certification.timestamp}</Typography>
-				<Typography noMargin color="contrast" size="xs" weight="600"
-					>{certification.title}</Typography
-				>
-				<Typography noMargin color="contrast" size="xs">{certification.company}</Typography>
+				<Typography noMargin color="light" size="xs">{certification.timestamp}</Typography>
+				<Typography noMargin color="light" size="xs" weight="600">{certification.title}</Typography>
+				<Typography noMargin color="light" size="xs">{certification.company}</Typography>
 			</li>
 		</a>
 	{/each}
@@ -35,7 +33,7 @@
 	}
 
 	.certification {
-		@include m.linear-gradient-black;
+		background-image: linear-gradient(160deg, #020202, #303030);
 		@include m.rounded-sm;
 		padding: 2rem 1.4rem;
 		flex: 1 0 40%;

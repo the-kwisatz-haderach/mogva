@@ -16,10 +16,12 @@
 	const toggleIsOpen = () => {
 		isOpen = !isOpen;
 	};
+	export let light = false;
 </script>
 
 <nav class="desktop">
 	<a
+		class:light
 		class="logo"
 		role="button"
 		tabindex={0}
@@ -35,18 +37,19 @@
 	</a>
 	<div class="link-container">
 		{#each menuItems as item}
-			<NavLink contrast href={item.href}>{item.label}</NavLink>
+			<NavLink {light} contrast href={item.href}>{item.label}</NavLink>
 		{/each}
-		<!-- <div class="link-wrapper">
+		<div class="link-wrapper">
 			<span class="inner-wrapper wrapper-15">
-				<ThemeSwitch class="hover-15" />
+				<ThemeSwitch />
 			</span>
-		</div> -->
+		</div>
 	</div>
 </nav>
 <nav class="mobile" class:isOpen>
 	<div class="menu-container">
 		<a
+			class:light
 			class="logo"
 			role="button"
 			tabindex={0}
@@ -75,7 +78,7 @@
 						isOpen = false;
 					}}
 				>
-					<NavLink contrast href={item.href}>{item.label}</NavLink>
+					<NavLink light contrast href={item.href}>{item.label}</NavLink>
 				</li>
 			{/each}
 			<!-- <div class="link-wrapper">
@@ -89,6 +92,10 @@
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
+	a.light {
+		color: white;
+	}
 
 	.desktop {
 		display: none;

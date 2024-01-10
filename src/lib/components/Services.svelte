@@ -39,7 +39,7 @@
 							transition:fade={{ duration: 1000, delay: 500 + index * 500, easing: sineInOut }}
 						>
 							<img src={block.imgSrc} alt={block.label} />
-							<Typography color="contrast" weight="600">{block.label}</Typography>
+							<Typography color="light" weight="600">{block.label}</Typography>
 						</div>
 					{/if}
 				{/each}
@@ -94,9 +94,9 @@
 	}
 
 	.service {
-		@include m.linear-gradient-black-dark;
 		@include m.rounded-md;
 		@include m.shadow-sm;
+		background-image: var(--linear-gradient-fixed-black);
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		padding: 1.5rem;
 		flex: 1;

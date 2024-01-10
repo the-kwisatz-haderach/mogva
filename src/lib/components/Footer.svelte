@@ -8,38 +8,41 @@
 	<div class="container">
 		<div class="footer-main">
 			<div class="col">
-				<Typography variant="h3" weight="600" color="contrast">Mogva AB</Typography>
+				<Typography variant="h3" weight="600" color="light">Mogva AB</Typography>
 				<ul>
 					<li>
-						<Typography color="contrast">Gustaf Lundström</Typography>
+						<Typography color="light">Gustaf Lundström</Typography>
 					</li>
 					<li>
-						<Typography color="contrast">Fullstack Software Engineer</Typography>
+						<Typography color="light">Fullstack Software Engineer</Typography>
 					</li>
 					<li>
-						<Typography color="contrast">Stockholm, Sweden</Typography>
+						<Typography color="light">Stockholm, Sweden</Typography>
 					</li>
 					<li>
-						<Link href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
+						<Link light href="mailto:gustaf.lundstrom@mogva.dev">gustaf.lundstrom@mogva.dev</Link>
 					</li>
 				</ul>
 			</div>
 			<div class="col">
-				<Typography variant="h3" weight="600" color="contrast">Social</Typography>
+				<Typography variant="h3" weight="600" color="light">Social</Typography>
 				<ul>
 					<li>
-						<Link href="https://www.linkedin.com/in/gustaf-lundstr%C3%B6m/" external>LinkedIn</Link>
+						<Link light href="https://www.linkedin.com/in/gustaf-lundstr%C3%B6m/" external
+							>LinkedIn</Link
+						>
 					</li>
-					<li><Link href="https://github.com/the-kwisatz-haderach" external>Github</Link></li>
+					<li><Link light href="https://github.com/the-kwisatz-haderach" external>Github</Link></li>
 					<li>
-						<Link href="https://exercism.org/profiles/KwisatzHaderach" external>Exercism</Link>
+						<Link light href="https://exercism.org/profiles/KwisatzHaderach" external>Exercism</Link
+						>
 					</li>
 				</ul>
 			</div>
 			<div class="col">Mogva</div>
 		</div>
 		<div class="footer-bottom">
-			<Typography color="contrast" size="xs">© {currentYear} Mogva AB</Typography>
+			<Typography color="light" size="xs">© {currentYear} Mogva AB</Typography>
 			<a
 				href="https://www.flaticon.com/free-icons/software-development"
 				title="software development icons"
@@ -57,7 +60,7 @@
 		align-items: center;
 		justify-content: center;
 		font-size: 6rem;
-		color: var(--color-text-contrast);
+		color: var(--color-silver-light);
 		font-family: var(--font-secondary);
 	}
 	.container {
@@ -67,9 +70,9 @@
 		flex-direction: column;
 	}
 	footer {
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		@include m.padded;
-		@include m.linear-gradient-black-dark-reverse;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		background-image: linear-gradient(160deg, #000, #1c1c1c);
 		display: flex;
 		width: 100%;
 		padding-top: 5rem;
@@ -91,7 +94,7 @@
 		flex-direction: column;
 		& > a {
 			font-size: 0.8rem;
-			color: var(--color-text-contrast);
+			color: var(--color-silver-light);
 			font-weight: 200;
 		}
 	}

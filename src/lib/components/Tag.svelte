@@ -20,8 +20,8 @@
 			color: var(--color-text-primary);
 		}
 		&.contrast {
-			background-color: var(--color-bg-primary-dark);
-			color: var(--color-text-contrast);
+			background-color: var(--color-black-dark);
+			color: var(--color-silver);
 			border: 1px solid rgba(255, 255, 255, 0.2);
 		}
 		&.sm {

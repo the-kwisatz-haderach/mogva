@@ -1,12 +1,11 @@
 @use './mixins' as m;
 
 @import url('normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Nova+Mono&display=swap');
 @import './variables';
 
 html {
 	font-size: 16px;
-	background-color: var(--color-bg-primary-dark);
+	background-color: var(--color-black-dark);
 }
 
 @media print {

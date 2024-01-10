@@ -48,8 +48,9 @@
 	}
 
 	.root.black {
-		@include m.linear-gradient-black-dark;
+		background-image: linear-gradient(160deg, #1a1a1a, #000);
 		border: 1px solid rgba(255, 255, 255, 0.2);
+		color: var(--color-silver-light);
 	}
 
 	.root::after {
@@ -78,7 +79,6 @@
 	.root:hover,
 	.root:focus {
 		outline: none;
-		color: var(--color-text-contrast);
 		transform: translateX(0);
 	}
 

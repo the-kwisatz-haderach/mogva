@@ -11,14 +11,12 @@
 		name="description"
 		content="Specialised in building safe, scalable & user friendly web applications. Do you need help tackling a challenging problem or project? Get in touch!"
 	/>
-	<meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme} />
-	<link rel="stylesheet" href={`/theme/${$theme}.css`} />
 </svelte:head>
 
 <div class="wrapper">
 	<div id="top" />
 	<div class="nav-wrapper">
-		<NavBar />
+		<NavBar light />
 	</div>
 	<slot />
 	<Footer />

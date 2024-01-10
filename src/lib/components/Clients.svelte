@@ -54,7 +54,7 @@
 		gap: 1.5rem;
 		margin-bottom: 2rem;
 		margin-top: 2rem;
-		filter: saturate(0) invert(1) brightness(0.8);
+		filter: var(--filter-logo);
 		transition: filter 0.3s ease-in-out;
 	}
 
@@ -63,7 +63,7 @@
 		align-self: center;
 	}
 	:global(.cta:hover + * > ul) {
-		filter: saturate(0) invert(1) brightness(1.5);
+		filter: var(--filter-logo-hover);
 	}
 
 	.main {

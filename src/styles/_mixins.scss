@@ -36,11 +36,11 @@
 }
 
 @mixin linear-gradient-silver {
-	background-image: linear-gradient(240deg, #cecece, #999999);
+	background-image: var(--linear-gradient-silver);
 }
 
 @mixin linear-gradient-silver-reverse {
-	background-image: linear-gradient(240deg, #999999, #cecece);
+	background-image: var(--linear-gradient-silver-reverse);
 }
 
 @mixin linear-gradient-blue {
@@ -52,19 +52,19 @@
 }
 
 @mixin linear-gradient-black {
-	background-image: linear-gradient(160deg, #020202, #303030);
+	background-image: var(--linear-gradient-black);
 }
 
 @mixin linear-gradient-black-dark {
-	background-image: linear-gradient(160deg, #1a1a1a, #000);
+	background-image: var(--linear-gradient-black-dark);
 }
 
 @mixin linear-gradient-black-dark-reverse {
-	background-image: linear-gradient(160deg, #000, #1c1c1c);
+	background-image: var(--linear-gradient-black-dark-reverse);
 }
 
 @mixin linear-gradient-black-reverse {
-	background-image: linear-gradient(160deg, #303030, #020202);
+	background-image: var(--linear-gradient-black-reverse);
 }
 
 @mixin padded {
