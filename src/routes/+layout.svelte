@@ -9,7 +9,7 @@
 	<title>Mogva AB | No-nonsense Fullstack Web Development</title>
 	<meta
 		name="description"
-		content="Specialised in building safe, scalable, reliable & user friendly applications for the web."
+		content="Specialised in building safe, scalable & user friendly web applications. Do you need help tackling a challenging problem or project? Get in touch!"
 	/>
 	<meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme} />
 	<link rel="stylesheet" href={`/theme/${$theme}.css`} />
