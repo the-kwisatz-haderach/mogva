@@ -34,6 +34,10 @@
 		width: 100%;
 	}
 
+	:global(.rich-text b) {
+		font-weight: 600;
+	}
+
 	:global(.rich-text p:not(:last-child)) {
 		margin-bottom: 0.5rem;
 	}
