@@ -9,6 +9,7 @@ html[data-theme='light']:root {
 	--color-text-contrast: var(--color-black);
 	--color-text-contrast-inverse: var(--color-silver);
 	--color-text-subtle: var(--color-grey);
+	--color-bg-menu: #cdcdcd;
 	--linear-gradient-silver: linear-gradient(240deg, #cecece, #999999);
 	--linear-gradient-silver-reverse: linear-gradient(240deg, #999999, #cecece);
 	--linear-gradient-black: linear-gradient(240deg, #dddddd, #999999);
@@ -30,6 +31,7 @@ html[data-theme='dark']:root {
 	--color-text-contrast: var(--color-silver);
 	--color-text-contrast-inverse: var(--color-black);
 	--color-text-subtle: var(--color-grey);
+	--color-bg-menu: var(--color-black-dark);
 	--linear-gradient-silver: linear-gradient(240deg, #cecece, #999999);
 	--linear-gradient-silver-reverse: linear-gradient(240deg, #999999, #cecece);
 	--linear-gradient-black: linear-gradient(160deg, #020202, #303030);

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
+	import { theme } from '$lib/stores/theme';
 	import NavLink from '../NavLink/NavLink.svelte';
-	import ThemeSwitch from '../ThemeSwitch.svelte';
 	import Ellipsis from '$lib/assets/icons/Ellipsis.svelte';
+	import Switch from '../Switch/Switch.svelte';
 
 	const menuItems = [
 		{ label: 'Expertise', href: '/#knowledge' },
@@ -12,11 +13,19 @@
 		{ label: 'Resume', href: '/resume' }
 	];
 
+	export let light = false;
 	let isOpen = false;
 	const toggleIsOpen = () => {
 		isOpen = !isOpen;
 	};
-	export let light = false;
+
+	const onClick = (enabled: boolean) => {
+		if (enabled) {
+			theme.set('dark');
+		} else {
+			theme.set('light');
+		}
+	};
 </script>
 
 <nav class="desktop">
@@ -39,11 +48,7 @@
 		{#each menuItems as item}
 			<NavLink {light} contrast href={item.href}>{item.label}</NavLink>
 		{/each}
-		<div class="link-wrapper">
-			<span class="inner-wrapper wrapper-15">
-				<ThemeSwitch />
-			</span>
-		</div>
+		<Switch enabled={$theme === 'dark'} {onClick} />
 	</div>
 </nav>
 <nav class="mobile" class:isOpen>
@@ -78,20 +83,22 @@
 						isOpen = false;
 					}}
 				>
-					<NavLink light contrast href={item.href}>{item.label}</NavLink>
+					<NavLink contrast href={item.href}>{item.label}</NavLink>
 				</li>
 			{/each}
-			<!-- <div class="link-wrapper">
-			<span class="inner-wrapper wrapper-15">
-				<ThemeSwitch class="hover-15" />
-			</span>
-		</div> -->
+			<div class="switch-wrapper">
+				<Switch enabled={$theme === 'dark'} {onClick} />
+			</div>
 		</div>
 	{/if}
 </nav>
 
 <style lang="scss">
 	@use '$styles/mixins' as m;
+
+	.switch-wrapper {
+		margin: 2rem auto;
+	}
 
 	a.light {
 		color: white;
@@ -117,7 +124,7 @@
 		width: 100%;
 		margin: 0;
 		&:not(:last-child) {
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 		}
 	}
 
@@ -153,7 +160,7 @@
 		position: fixed;
 		inset: 0;
 		height: 100vh;
-		background-color: black;
+		background-color: var(--color-bg-menu);
 		width: 100vw;
 		z-index: 99;
 	}
@@ -184,7 +191,7 @@
 		}
 		.desktop {
 			@include m.padded;
-			padding-top: 2rem;
+			margin-top: 2rem;
 			justify-content: space-between;
 			align-items: center;
 			color: var(--color-text-contrast);

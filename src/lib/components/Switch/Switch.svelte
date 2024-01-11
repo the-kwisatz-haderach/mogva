@@ -1,14 +1,16 @@
 <script lang="ts">
+	import moon from '$lib/assets/images/moon.png';
 	export let enabled = false;
 	export let onClick: (checked: boolean) => void;
 </script>
 
 <label class="switch">
 	<input type="checkbox" on:change={() => onClick(!enabled)} bind:checked={enabled} />
-	<span class="slider round" />
+	<span class="slider" />
 </label>
 
 <style lang="scss">
+	@use '$styles/mixins' as m;
 	$size: 26px;
 
 	.switch {
@@ -24,8 +26,9 @@
 		height: 0;
 	}
 	.slider {
-		box-sizing: border-box;
+		box-shadow: 0px 8px 13px -8px rgba(0, 0, 0, 0.6);
 		border: 2px solid rgba(160, 160, 160, 0.2);
+		border-radius: 34px;
 		position: absolute;
 		cursor: pointer;
 		top: 0;
@@ -40,11 +43,26 @@
 	.slider::before {
 		position: absolute;
 		content: '';
+		border-radius: 50%;
 		height: $size;
 		width: $size;
 		left: 2px;
 		bottom: 2px;
-		background-image: linear-gradient(160deg, #515151, #959595);
+		background-image: linear-gradient(160deg, #a7a7a7, #7e7e7e);
+		-webkit-transition: 0.4s;
+		transition: 0.4s;
+	}
+
+	.slider::after {
+		content: '';
+		top: 7px;
+		left: 7px;
+		position: absolute;
+		z-index: 10;
+		width: calc($size - 9px);
+		height: calc($size - 9px);
+		background-size: cover;
+		background-image: url('/moon.png');
 		-webkit-transition: 0.4s;
 		transition: 0.4s;
 	}
@@ -54,22 +72,16 @@
 		background-color: black;
 	}
 
-	input:focus + .slider {
-		box-shadow: 0 0 1px var(--color-black-dark);
+	input:checked + .slider::after {
+		-webkit-transform: translateX($size);
+		-ms-transform: translateX($size);
+		transform: translateX($size);
+		background-image: url('/sun.png');
 	}
 
 	input:checked + .slider:before {
 		-webkit-transform: translateX($size);
 		-ms-transform: translateX($size);
 		transform: translateX($size);
-	}
-
-	/* Rounded sliders */
-	.slider.round {
-		border-radius: 34px;
-	}
-
-	.slider.round:before {
-		border-radius: 50%;
 	}
 </style>
