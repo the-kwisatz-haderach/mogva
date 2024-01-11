@@ -1,5 +1,4 @@
 <script lang="ts">
-	import moon from '$lib/assets/images/moon.png';
 	export let enabled = false;
 	export let onClick: (checked: boolean) => void;
 </script>
